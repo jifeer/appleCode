@@ -43,7 +43,8 @@
 
     methods: {
       waveCanvas(){
-        this.$xhr.get("apple/index/getIndexStatistics")
+        // this.$xhr.get("apple/index/getIndexStatistics")
+        this.$xhr.get("/static/json/sample/wave_index_statistics.json")
           .then((res) => {
             var SWlefter = LibraryWave.waveLeft;
 

@@ -57,9 +57,9 @@
             formatter:(params)=>{
 //          	   console.log(params)
             	   return `${params[0].name}<br/>
-            	           ${params[0].marker}${params[0].seriesName}：${params[0].value}万吨<br/>
+            	           ${params[0].marker}${params[0].seriesName}：${params[0].value}个<br/>
             	           ${params[1].marker}${params[1].seriesName}：${params[1].value}%<br/>
-            	           ${params[2].marker}${params[2].seriesName}：${params[2].value}万吨<br/>
+            	           ${params[2].marker}${params[2].seriesName}：${params[2].value}个<br/>
             	           ${params[3].marker}${params[3].seriesName}：${params[3].value}%`
             }
           },
@@ -91,7 +91,7 @@
           }],
           yAxis: [{
             type: 'value',
-            name: '万吨',
+            name: '个',
             nameTextStyle: {
               fontSize: 12,
               color:'#fff',
@@ -154,7 +154,7 @@
 
           }],
           series: [{
-            name: '苹果消费总量',
+            name: '采购总量',
             type: 'bar',
             barWidth:7,
             itemStyle:{
@@ -182,7 +182,7 @@
             },
             data: this.tradeTopBarData.expenseChangeRate,
           },{
-            name: '苹果总产量',
+            name: '成都市采购产量',
             type: 'bar',
             barWidth:7,
             itemStyle:{

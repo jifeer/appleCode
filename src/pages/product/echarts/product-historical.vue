@@ -83,11 +83,11 @@
 //                console.log(params)
               let str = `<div style="padding: 6px"><p style="text-align: left">${params[0].axisValue}</p>`
               params.forEach(function (val, index) {
-                const unite = (val.seriesName.indexOf('种植面积')  > -1 || val.seriesName.indexOf('产量'))  > -1 && val.seriesType === 'bar' ? '万亩' : val.seriesName.indexOf('单产') > -1 && val.seriesType === 'bar' ? '公斤/亩' : '%'
+                const unite = (val.seriesName.indexOf('采购总量')  > -1 || val.seriesName.indexOf('采购总额'))  > -1 && val.seriesType === 'bar' ? '万元' : val.seriesName.indexOf('单产') > -1 && val.seriesType === 'bar' ? '万元/个' : '%'
                 str += `<p style="text-align: left">${val.seriesName}：${val.value || val.value === 0 ? val.value.toFixed(2) : "-"}${unite}`
 
                 // if (index % 2 == 0) {
-                //   str += `<p style="text-align: left">${val.seriesName}:${val.value || val.value === 0 ? val.value.toFixed(2) : "-"}${val.seriesName.indexOf("种植面积") >= 0 ? '万亩' : val.seriesName.indexOf("单产") >= 0 ? '公斤/亩' : '万吨'}</p>`
+                //   str += `<p style="text-align: left">${val.seriesName}:${val.value || val.value === 0 ? val.value.toFixed(2) : "-"}${val.seriesName.indexOf("种植面积") >= 0 ? '万亩' : val.seriesName.indexOf("单产") >= 0 ? '万元/个' : '个'}</p>`
                 // } else {
                 //   str += `<p style="text-align: left">${val.seriesName}:${val.value || val.value === 0 ? val.value.toFixed(2) : "-"}%</p>`
                 // }
@@ -106,7 +106,7 @@
             itemHeight: 6,
             itemGap: 18,
             data: [{
-              name: '种植面积',
+              name: '采购总量',
               icon: 'rect',
             }, {
               name: '变化率',
@@ -143,7 +143,7 @@
           }],
           yAxis: [{
             type: 'value',
-            name: '种植面积（万亩）',
+            name: '采购总量（个）',
             nameTextStyle: {
               color: '#fff'
             },
@@ -218,7 +218,7 @@
             if (item != 'xdata') {
 
               newSeries.push({
-                name: '种植面积',
+                name: '采购总量',
                 type: 'bar',
                 barWidth: 8,
                 itemStyle: {

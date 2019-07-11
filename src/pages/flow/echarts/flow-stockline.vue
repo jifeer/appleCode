@@ -18,7 +18,7 @@
       },
       area:{
       	type:String,
-      	default: "山东"
+      	default: "成都"
       },
       unit:{
       	type:String,
@@ -46,7 +46,7 @@
     },
     methods: {
       initOption() {
-      if (Object.keys(this.data).length) { 
+      if (Object.keys(this.data).length) {
         this.option = {
           grid: {
             left: '5%',
@@ -55,7 +55,7 @@
             top: '20%',
             containLabel: true
           },
-           tooltip: { 
+           tooltip: {
             	...tooltipStyle,
               trigger: 'axis',
             },
@@ -69,7 +69,7 @@
               color: '#fff',
               fontSize: 18
             },
-            
+
             data: [],
             //,'山东相比去年同期','陕西相比去年同期'
           },
@@ -212,7 +212,7 @@
         this.myChart.dispose()
       }
     },
-    
+
   }
 
 </script>

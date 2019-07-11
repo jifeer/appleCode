@@ -16,7 +16,7 @@
           <Mapecharts :echartsData="echartsData" @changeProvince="changeProvince" class="map-echarts"></Mapecharts>
         </div>
         <div class="rank-echarts-wrapper">
-          <div class="rank-title">批发价格排名(元/公斤)</div>
+          <div class="rank-title">批发价格排名(万元/个)</div>
           <rankingEchart :rankingEchart="rankingEchart" v-if="rankingEchartToggle"></rankingEchart>
           <div class="show-button" :class="{'active':isHide}" @click="hideRankecharts">
             <i class="iconfont  icon-xiangxia"></i>

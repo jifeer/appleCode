@@ -1,0 +1,32 @@
+{
+  "status": 200,
+  "data": {
+    "dashboardData": [
+      {
+        "seriesData": "6.55",
+        "min": "2",
+        "max": "9.06",
+        "name": "月均价",
+        "section1": "2.15",
+        "section2": "6.24"
+      },
+      {
+        "date": "2017-10-26",
+        "seriesData": "6.54",
+        "min": "2",
+        "max": "9.23",
+        "name": "日均价",
+        "section1": "2.16",
+        "section2": "6.39"
+      },
+      {
+        "seriesData": "6.56",
+        "min": "4.33",
+        "max": "7.89",
+        "name": "年均价",
+        "section1": "0.73",
+        "section2": "2.84"
+      }
+    ]
+  }
+}

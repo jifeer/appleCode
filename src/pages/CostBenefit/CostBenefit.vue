@@ -110,7 +110,7 @@
           data: [],
           time: [],
           option: {
-            yAxis: [{ name: '元/亩                 ' }],
+            yAxis: [{ name: '万元/个                 ' }],
             dataZoom: [{
               height: 14,
               left: "4%",
@@ -221,10 +221,10 @@
       // 单位产品和单位面积切换
       _changeBtn(val) {
         if (val == 101002) {
-          this.cbchartData.option.yAxis[0].name = "元/亩            ",
+          this.cbchartData.option.yAxis[0].name = "万元/个            ",
             this.units = true;
         } else {
-          this.cbchartData.option.yAxis[0].name = "元/公斤            "
+          this.cbchartData.option.yAxis[0].name = "万元/个            "
           this.units = false
         }
       },
@@ -232,12 +232,14 @@
       //获取页面主体上部分折柱图数据
       getCBchartData() {
         //  在这里修改数据
-        this.$xhr.get('apple/income/getTrendChange', {
+        /* this.$xhr.get('apple/income/getTrendChange', {
           params: {
             ...this.ApiCBchartParms
 
           }
-        }).then((res) => {
+        }) */
+        this.$xhr.get('/static/json/sample/cp/trend_change.json')
+         .then((res) => {
 //                        console.log(res)
           this.cbchartData.data = res.data.data
           this.cbchartData.time = res.data.time
@@ -257,7 +259,7 @@
       },
       getCSpieData() {
         //  在这里修改数据
-        this.$xhr.get('apple/income/costStructure', {
+        this.$xhr.get('/static/json/sample/cp/cost_structure.json', {
           params: {
             ...this.ApiCSpieParms
           }
@@ -286,7 +288,7 @@
       },
       getCDpieData() {
         //  在这里修改数据
-        this.$xhr.get('apple/income/subCostStructure', {
+        this.$xhr.get('/static/json/sample/cp/sub_cost_structure.json', {
           params: {
             ...this.ApiCDpieParms
           }

@@ -1,0 +1,48 @@
+ {
+"status": 200,
+"data": [
+{
+"itemId": "103015",
+"JitemId": "102004",
+"children": [
+{
+"itemId": "103016",
+"JitemId": "103002",
+"children": [],
+"label": "氮肥",
+"parentId": ""
+},
+{
+"itemId": "103020",
+"JitemId": "103006",
+"children": [],
+"label": "磷肥",
+"parentId": ""
+},
+{
+"itemId": "103022",
+"JitemId": "103008",
+"children": [],
+"label": "钾肥",
+"parentId": ""
+},
+{
+"itemId": "103024",
+"JitemId": "103010",
+"children": [],
+"label": "复混肥",
+"parentId": ""
+},
+{
+"itemId": "103030",
+"JitemId": "103014",
+"children": [],
+"label": "其他肥料",
+"parentId": ""
+}
+],
+"label": "化肥",
+"parentId": ""
+}
+]
+}

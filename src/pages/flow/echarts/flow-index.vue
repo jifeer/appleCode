@@ -131,10 +131,10 @@
                     tooltip: {
                       ...tooltipStyle,
                       formatter: function (params) {
-                        let psername = dataItem[1].name == '黑龙江省' || dataItem[1].name == '内蒙古自治区' ? dataItem[1].name.substring(0, 3) : dataItem[1].name.substring(0, 2)
+                        let psername = dataItem[1].name == '成都' || dataItem[1].name == '成都市' ? dataItem[1].name.substring(0, 3) : dataItem[1].name.substring(0, 2)
                         let seriesName = dataItem[0].name.substring(0, 2)
                         //判断主销区的北京单位用%其它用吨
-                        let unit = seriesName == '北京' ? '%' : '吨'
+                        let unit = seriesName == '成都' ? '个' : '个'
                         // 判断如果 是自己对自己的数据则 不显示 提示框，其 flag 为 fakedata
                         if (params.data && params.data.value && params.data.value[2] === 'fakedata') {
                           return ''

@@ -104,7 +104,7 @@
                 }
               },
               type: 'value',
-              name: '价格（元/公斤）',
+              name: '价格（万元/个）',
               min: 'dataMin',
               nameTextStyle: {
                 fontSize: 16,

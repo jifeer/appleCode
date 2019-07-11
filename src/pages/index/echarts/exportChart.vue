@@ -49,8 +49,8 @@
               backgroundColor: '#099d4f',
               formatter: (params) => {
                 return `${params[0].name}<br>
-	            	        ${params[0].marker}${params[0].seriesName}：${params[0].value}万吨<br/>
-	            	        ${params[1].marker}${params[1].seriesName}：${params[1].value}万吨`
+	            	        ${params[0].marker}${params[0].seriesName}：${params[0].value}个<br/>
+	            	        ${params[1].marker}${params[1].seriesName}：${params[1].value}个`
               }
             },
 
@@ -81,7 +81,7 @@
             },
             yAxis: [
               {
-                name: '万吨',
+                name: '个',
                 nameTextStyle: {
                   color: '#fff',
                   fontSize: 12,

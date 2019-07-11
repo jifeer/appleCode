@@ -51,7 +51,7 @@ export default {
         },
         yAxis: [{
           type: 'value',
-          name: "消费总量（吨）",
+          name: "采购总量（个）",
           nameTextStyle:{
             fontSize:12,
           },
@@ -107,7 +107,7 @@ export default {
         },
         series: [
           {
-            name: '消费总量（吨）',
+            name: '采购总量（个）',
             type: 'bar',
             barWidth: 10,
             label: {

@@ -58,14 +58,14 @@
             top: '15',
             itemGap: 30, //两图例之间距离
             data: [{
-              name: "苹果价格",
+              name: "项目单价",
               textStyle: {
                 fontSize:16,
                 color: "#fff",
                 padding: [0, 5]
               }
             }, {
-              name: "国内生产总值",
+              name: "预算总额",
               textStyle: {
                 fontSize:16,
                 color: "#fff",
@@ -73,7 +73,7 @@
               },
             },
               {
-                name: "苹果替代品（香梨）价格",
+                name: "项目总额",
                 textStyle: {
                   fontSize:16,
                   color: "#fff",
@@ -131,7 +131,7 @@
           color:["#40b0fc","#0e62d4","#4c58b1","#c37837","#c0bb3e"],
           series: [
             {
-              name: '苹果价格',
+              name: '项目单价',
               type: 'bar',
               barWidth : 40,
               barGap: 1,
@@ -162,7 +162,7 @@
 //              }
             },
             {
-              name: '国内生产总值',
+              name: '预算总额',
               type: 'bar',
               barWidth : 40,
               barGap: 1,
@@ -177,7 +177,7 @@
               },
             },
             {
-              name: '苹果替代品（香梨）价格',
+              name: '项目总额',
               type: 'bar',
 //              markLine: {
 //                symbolSize: 7,

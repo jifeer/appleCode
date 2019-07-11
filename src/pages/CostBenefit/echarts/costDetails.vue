@@ -65,7 +65,7 @@
               formatter: (params) => {
 //			                	console.log(params)
                 return "<div style='text-align:left'>" + `${params.marker}${params.name}<br/>
-			                	        ${params.value}${this.units == true ? "元/亩" : "元/公斤"}<br/>
+			                	        ${params.value}${this.units == true ? "万元/个" : "万元/个"}<br/>
 			                	        ${params.percent}%` + "</div>"
               }
             },

@@ -117,7 +117,7 @@
                 margin: 10,
               },
               type: 'value',
-              name: '元/公斤',
+              name: '万元/个',
               min: 'dataMin',
               nameTextStyle: {
                 fontSize: 12,

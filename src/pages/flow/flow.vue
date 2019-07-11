@@ -113,7 +113,7 @@
           height: '100px', //高
           needDefault: true, //是否需要默认的时间来渲染图表
           id: 'flowIndex', //随便写ID  保证同一个页面ID不一样就可以
-          url: 'apple/circulation/getTimes?marketclass=1&areas='+encodeURI('全国')
+          url: '/static/json/sample/flow/cir_times.json?marketclass=1&areas='+encodeURI('全国')
         },
         screenWidth: document.body.clientWidth, // 这里是给到了一个默认值 （这个很重要）
         eText: '数据起始于2008年1月，级别为全国、省级，来源于农业农村部。',

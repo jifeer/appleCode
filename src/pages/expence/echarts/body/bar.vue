@@ -92,7 +92,7 @@
             itemHeight: 7,
             itemGap: 30, //两图例之间距离
             data: [{
-              name: "消费总量（万吨）",
+              name: "采购总量（个）",
               textStyle: {
                 fontSize: 18,
                 color: "#fff",
@@ -110,7 +110,7 @@
             }]
           },
           yAxis: [{
-            name: "消费量（万吨）",
+            name: "完成量（个）",
             // min: 1000,
             nameTextStyle: {
               fontSize: 18,
@@ -179,7 +179,7 @@
           }],
 
           series: [{
-            name: '消费总量（万吨）',
+            name: '完成总量（个）',
             type: 'bar',
             barMaxWidth: 16,
             label: {

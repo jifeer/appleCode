@@ -7,27 +7,27 @@
         <div class=" left-bar-underline"></div>
       </router-link>
       <router-link class="item" tag="li" :to="{name:'product'}">
-        <p><i class="icon iconfont icon-guoshumiaomu"></i><br/>生产</p>
+        <p><i class="icon iconfont icon-guoshumiaomu"></i><br/>采购地区</p>
         <div class=" left-bar-underline"></div>
       </router-link>
       <router-link class="item" tag="li" :to="{name:'flow'}">
-        <p><i class="iconfont icon-icon1460188803541"></i><br/>流通</p>
+        <p><i class="iconfont icon-icon1460188803541"></i><br/>代理机构</p>
         <div class="left-bar-underline"></div>
       </router-link>
       <router-link class="item" tag="li" :to="{name:'price'}">
-        <p><i class="iconfont icon-jiage"></i><br/>价格</p>
+        <p><i class="iconfont icon-jiage"></i><br/>采购规模</p>
         <div class="left-bar-underline"></div>
       </router-link>
       <router-link class="item" tag="li" :to="{name:'expence'}">
-        <p><i class="iconfont icon-xiaofei"></i><br/>消费</p>
+        <p><i class="iconfont icon-xiaofei"></i><br/>行业代码</p>
         <div class="left-bar-underline"></div>
       </router-link>
       <router-link class="item" tag="li" :to="{name:'ForeignTrade'}">
-        <p><i class="iconfont icon-shijieditu"></i><br/>贸易</p>
+        <p><i class="iconfont icon-shijieditu"></i><br/>供应商</p>
         <div class="left-bar-underline"></div>
       </router-link>
       <router-link class="item" tag="li" :to="{name:'CostBenefit'}">
-        <p><i class="iconfont icon-yizhuanshouyi"></i><br/>成本收益</p>
+        <p><i class="iconfont icon-yizhuanshouyi"></i><br/>服务领域</p>
         <div class="left-bar-underline "></div>
       </router-link>
 

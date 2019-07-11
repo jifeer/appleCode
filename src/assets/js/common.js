@@ -2077,7 +2077,6 @@ export const datazoom = [{
     }
   },
   fillerColor: '#063052',
-  borderColor: '#276b9f',
   "start": 0,
   "end": 100,
   handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
@@ -2157,7 +2156,7 @@ export function handleTimeData(data, type) {
 	    }
 	    res = arr.join(',')
   	}
-    
+
 
   } else if (type === 'week') {
     // 2017.8-2017.10

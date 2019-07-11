@@ -31,28 +31,28 @@
       stockRateData: {
         handler: function (val, oldVal) {
 //                  console.log("watch")
-          this.initOption() 
-          this.initChart() 
+          this.initOption()
+          this.initChart()
         },
         deep: true  //增加deep 观察对象的子对象变化
       }
     },
-    data() { 
+    data() {
       return {
       	option:null,
       };
-    }, 
-    mounted() { 
-      this.myChart = this.$echarts.init(this.$refs.stockRate) 
-      this.initOption() 
+    },
+    mounted() {
+      this.myChart = this.$echarts.init(this.$refs.stockRate)
+      this.initOption()
     },
 
-    methods: { 
-      initOption() { 
-//    	console.log(this.area) 
-        if (Object.keys(this.stockRateData).length) { 
-          this.option = { 
-            tooltip: { 
+    methods: {
+      initOption() {
+//    	console.log(this.area)
+        if (Object.keys(this.stockRateData).length) {
+          this.option = {
+            tooltip: {
             	...tooltipStyle,
               trigger: 'axis',
             },
@@ -97,7 +97,7 @@
 	              start: 1,
 	              end: 35
             }],
-            
+
             legend: {
             	type:'scroll',
             	width:'850',
@@ -120,7 +120,7 @@
               top: "20%",
               containLabel: false  //总宽度是否包含坐标轴标签
             },
-            
+
             xAxis: {
 	            type: 'category',
 	            data: [],
@@ -154,7 +154,7 @@
 	                lineStyle: {
 	                  color: '#004574',
 	                  type: "dashed",
-	
+
 	                }
 	              },
 	              axisLabel: {
@@ -203,8 +203,8 @@
         let newSeries = [];
         let legendData = [];
         let color = {
-            ser0:['#FF806B','#FF7200'] ,  
-            ser1:['#91C7AE','#D2C62D'] 
+            ser0:['#FF806B','#FF7200'] ,
+            ser1:['#91C7AE','#D2C62D']
          }
         this.stockRateData.forEach((val,index)=>{
           newSeries.push({
@@ -233,7 +233,7 @@
             }
           },{
             type: "line",
-            name: val.name == "陕西" ? val.name+"出库价格变化率" :val.name+"富士苹果批发价同比变化率",
+            name: val.name == "成都" ? val.name+"采购总额变化率" :val.name,
             smooth:true,
             symbolSize: 13,
             yAxisIndex: 1,
@@ -258,16 +258,16 @@
               }
             }
           })
-          
+
         	legendData.push({
         		name:val.name+"库容比同比变化率"
         	},{
-        		name:val.name == "陕西" ? val.name+"出库价格变化率" : val.name+"富士苹果批发价同比变化率"
+        		name:val.name == "陕西" ? val.name+"采购价格变化率" : val.name
         	})
 //        console.log(val.time)
           this.option.xAxis.data = val.time
           this.option.legend.data = legendData
-          this.option.yAxis[1].name = val.name == "陕西" ? '出库价格变化率（%）                  ' : '富士苹果批发价同比变化率（%）                              '
+          this.option.yAxis[1].name = val.name == "陕西" ? '采购价格变化率（%）                  ' : '富士苹果批发价同比变化率（%）                              '
         })
 
         this.option.series = newSeries

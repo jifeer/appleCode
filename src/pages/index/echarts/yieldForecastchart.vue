@@ -65,11 +65,11 @@
             },
             tooltip: {
               trigger: 'axis',
-//            formatter: '{b}<br />{a0}: {c0}公斤/亩<br />{a1}: {c1}公斤/亩',
+//            formatter: '{b}<br />{a0}: {c0}万元/个<br />{a1}: {c1}万元/个',
               formatter: (params) => {
                 return `${params[0].name}<br>
-	            	        ${params[0].marker}${params[0].seriesName}：${params[0].value}公斤/亩<br/>
-	            	        ${params[1].marker}${params[1].seriesName}：${params[1].value}公斤/亩`
+	            	        ${params[0].marker}${params[0].seriesName}：${params[0].value}万元/个<br/>
+	            	        ${params[1].marker}${params[1].seriesName}：${params[1].value}万元/个`
               },
               axisPointer: {
                 type: 'line',
@@ -109,7 +109,7 @@
             }],
             yAxis: [{
               type: 'value',
-              name: '单产（公斤/亩）',
+              name: '采购总额（万元）',
               nameTextStyle: {
                 color: '#fff',
                 fontSize: 12,
@@ -143,7 +143,7 @@
               },
             }],
             series: [{
-              name: '预测单产',
+              name: '采购预算',
               type: 'line',
               smooth: true,
               lineStyle: {
@@ -165,7 +165,7 @@
               },
               data: this.yechartsData.data1,
             }, {
-              name: '实际单产',
+              name: '实际采购总额',
               type: 'line',
               smooth: true,
               lineStyle: {

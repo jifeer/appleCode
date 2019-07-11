@@ -105,7 +105,7 @@
               data: []
             },
             yAxis: [{
-                name: '元/亩                   ',
+                name: '万元/个                   ',
                 nameTextStyle: {
                   color: '#fff',
                   fontSize: '18',
@@ -178,7 +178,7 @@
             return Math.abs(val)
           })
           legendData.push({
-            name: `${val.name}总成本`,
+            name: `${val.name}总额度`,
             icon: 'rect',
           }, {
             name: `${val.name}净利润`,
@@ -189,7 +189,7 @@
           })
 
           this.newSeries.push({
-            name: `${val.name}总成本`,
+            name: `${val.name}总额度`,
             type: "bar",
             barWidth: 'auto',
             barMaxWidth: 16,
@@ -260,9 +260,9 @@
           })
         })
         if (this.units == true) {
-          this.unit = "元/亩"
+          this.unit = "万元/个"
         } else {
-          this.unit = "元/公斤"
+          this.unit = "万元/个"
         }
 
 

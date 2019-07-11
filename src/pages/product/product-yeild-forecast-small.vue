@@ -28,7 +28,7 @@
       renderChart(){
         //  在这里修改数据
 
-        this.$xhr.get('apple/production/yieldForecast', {
+        this.$xhr.get('/static/json/sample/yield_forecast.json', {
           params: {
             AREA_NAME: '陕西',
             TIME_ID: '2002,2003,3004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017',

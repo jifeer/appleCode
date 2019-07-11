@@ -201,7 +201,7 @@
           // Y轴单位
           if (!this.btnIndex) {
             if (val.name.indexOf('成本') >= 0 || val.name.indexOf('费用') >= 0 || val.name.indexOf('折价') >= 0) {
-              axisName.push('元/亩')
+              axisName.push('万元/个')
             } else if (val.name.indexOf('工价') >= 0) {
               axisName.push('元（亩·日）')
             } else if (val.name.indexOf('天数') >= 0) {
@@ -256,7 +256,7 @@
           let tooltip = "<div style='text-align:left'>" + params[0].name + "年<br/>"
           if (!this.btnIndex) {
             for (let index = 0; index < params.length; index++) {
-              tooltip += `${params[index].marker}${params[index].seriesName}：${params[index].value === '-' ? 0 : params[index].value.toFixed(2)} ${(params[index].seriesName.indexOf('天数') >= 0 ? '天' : params[index].seriesName.indexOf('工价') >= 0 ? '元/(亩·日)' : '元/亩')}<br/>`
+              tooltip += `${params[index].marker}${params[index].seriesName}：${params[index].value === '-' ? 0 : params[index].value.toFixed(2)} ${(params[index].seriesName.indexOf('天数') >= 0 ? '天' : params[index].seriesName.indexOf('工价') >= 0 ? '元/(亩·日)' : '万元/个')}<br/>`
             }
           } else {
             for (let index = 0; index < params.length; index++) {

@@ -46,7 +46,7 @@
             backgroundColor: '#099d4f',
             formatter: function (params) {
               let str = `<div style="padding: 6px; font-weight: lighter"><p style="text-align: left">${params.name}</p>
-                         <p style="text-align: left">${params.value} ${params.data.name === '产量' ? '万吨' : '万亩'}</p>
+                         <p style="text-align: left">${params.value} ${params.data.name === '产量' ? '个' : '万亩'}</p>
                          <p style="text-align: left">排行第 <span style="font-weight: bold">${(1 + params.dataIndex)}</span></p>`
               str += `</div>`
               return str

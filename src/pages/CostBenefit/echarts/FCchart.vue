@@ -216,9 +216,9 @@
         })
         //为tootip加单位
         if (this.item == true) {
-          this.unit = "公斤/亩"
+          this.unit = "万元/个"
         } else {
-          this.unit = "元/亩"
+          this.unit = "万元/个"
         }
         this.option.tooltip.formatter = (params) => {
           let tooltip = "<div style='text-align:left'>" + params[0].name + "年<br/>"

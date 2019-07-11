@@ -192,7 +192,7 @@
           },
           tooltipExtraCssText: '',
 
-          jsonUrl: './static/json/',
+          jsonUrl: './/static/json/',
           tooltipCallBack: (d) => {
             if (d.data.degree === '无' || d.data.degree === '暂无数据') {
               return

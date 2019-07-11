@@ -81,7 +81,7 @@ s<template>
               data: this.echartsData.xdata
             },
             yAxis: {
-              name: '（吨）',
+              name: '（个）',
               nameTextStyle: {
                 color: '#fff',
                 fontSize: '16',

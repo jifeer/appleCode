@@ -217,13 +217,13 @@
 
               // 生成新的图例
               newLegendData.push({
-                name: `${this.echartsData.isXian?'':item}苹果占水果面积`,
+                name: `${this.echartsData.isXian?'':item}采购数占总采购数`,
               }, {
-                name: `${this.echartsData.isXian?'':item}苹果占水果产量`,
+                name: `${this.echartsData.isXian?'':item}采购额占总采购额`,
               })
               // 生成新的系列
               newSeries.push({
-                name: `${this.echartsData.isXian?'':item}苹果占水果面积`,
+                name: `${this.echartsData.isXian?'':item}采购额占总采购额`,
                 type: 'line',
                 smooth: true,
                 symbolSize: 6,
@@ -246,7 +246,7 @@
                 },
                 data: this.echartsData.data[item].data1,
               }, {
-                name: `${this.echartsData.isXian?'':item}苹果占水果产量`,
+                name: `${this.echartsData.isXian?'':item}采购数占总采购数`,
                 type: 'line',
                 smooth: true,
                 symbolSize: 6,

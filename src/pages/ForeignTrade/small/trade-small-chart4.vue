@@ -192,7 +192,7 @@
                   str = `${params.name} > ${params.seriesName} <br> 交易量：${params.value[2][0]}吨（${params.value[2][1]}%）`
                 }
               } else if (params.componentSubType === 'map') {
-                let unite = me.appleType === '苹果干' ? '吨' : '万吨'
+                let unite = me.appleType === '苹果干' ? '吨' : '个'
                 if (params.value) {
                   return `${me.time}年${nameMap[params.name]}<br>${me.dir}量：${params.value}${unite}`
                 }

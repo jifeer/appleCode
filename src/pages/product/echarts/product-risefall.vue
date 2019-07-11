@@ -71,14 +71,14 @@
              if (this.echartsData.data.length > 0 && this.echartsData.data[params[0].dataIndex].value >= 0) {
              return `<ul style="list-style: none;text-align: left">
              <li>${params[0].name}</li>
-             <li>${params[0].data.name}：${params[0].data.typeVal}${params[0].data.name === '种植面积' ? '万亩' : params[0].data.name === '产量' ? '千吨' : '公斤/亩'}</li>
+             <li>${params[0].data.name}：${params[0].data.typeVal}${params[0].data.name === '种植面积' ? '万亩' : params[0].data.name === '产量' ? '千吨' : '万元/个'}</li>
              <li>变化率：<span style="color:#fff;font-weight: bold;">${params[0].data.value}</span>%↑</li>
              </ul>`;
              }
              else {
              return `<ul style="list-style: none;text-align: left">
              <li>${params[0].name}</li>
-             <li>${params[0].data.name}：${params[0].data.typeVal}${params[0].data.name === '种植面积' ? '万亩' : params[0].data.name === '产量' ? '千吨' : '公斤/亩'}</li>
+             <li>${params[0].data.name}：${params[0].data.typeVal}${params[0].data.name === '种植面积' ? '万亩' : params[0].data.name === '产量' ? '千吨' : '万元/个'}</li>
              <li>变化率：<span style='color:#fff;font-weight:bold;'>${-params[0].data.value}</span>%↓</li>
              </ul>`;
              }
@@ -92,8 +92,8 @@
                   if (this.echartsData.data.length > 0 && this.echartsData.data[val.dataIndex].value <= 0) {
                     str = `<ul style="list-style: none;text-align: left;padding: 6px;">
                           <li>${val.name}</li>
-                          <li>${val.data.name}：${val.data.typeVal.toFixed(2)}${val.data.name === '种植面积' ? '万亩' : val.data.name === '产量' ? '万吨' : '公斤/亩'}</li>
-                          <li>${val.data.name === '产量' ? '减产' : '减少'}：${val.data.riseorfall || val.data.riseorfall === 0 ? val.data.riseorfall.toFixed(2) : "-"}${val.data.name === '种植面积' ? '万亩' : val.data.name === '产量' ? '万吨' : '公斤/亩'}</li>
+                          <li>${val.data.name}：${val.data.typeVal.toFixed(2)}${val.data.name === '种植面积' ? '万亩' : val.data.name === '产量' ? '个' : '万元/个'}</li>
+                          <li>${val.data.name === '产量' ? '减产' : '减少'}：${val.data.riseorfall || val.data.riseorfall === 0 ? val.data.riseorfall.toFixed(2) : "-"}${val.data.name === '种植面积' ? '万亩' : val.data.name === '产量' ? '个' : '万元/个'}</li>
                           <li>变化率：<span style='color:#fff;font-weight:bold;'>${val.data.value ? -val.data.value.toFixed(2) : val.data.value.toFixed(2)}</span>%↓</li>
                         </ul>`;
                   }
@@ -101,8 +101,8 @@
                   if (this.echartsData.data.length > 0 && this.echartsData.data[val.dataIndex].value >= 0) {
                     str = `<ul style="list-style: none;text-align: left;padding: 6px;">
                           <li>${val.name}</li>
-                          <li>${val.data.name}：${val.data.typeVal.toFixed(2)}${val.data.name === '种植面积' ? '万亩' : val.data.name === '产量' ? '万吨' : '公斤/亩'}</li>
-                          <li>${val.data.name === '产量' ? '增产' : '增加'}：${val.data.riseorfall || val.data.riseorfall === 0 ? val.data.riseorfall.toFixed(2) : "-"}${val.data.name === '种植面积' ? '万亩' : val.data.name === '产量' ? '万吨' : '公斤/亩'}</li>
+                          <li>${val.data.name}：${val.data.typeVal.toFixed(2)}${val.data.name === '种植面积' ? '万亩' : val.data.name === '产量' ? '个' : '万元/个'}</li>
+                          <li>${val.data.name === '产量' ? '增产' : '增加'}：${val.data.riseorfall || val.data.riseorfall === 0 ? val.data.riseorfall.toFixed(2) : "-"}${val.data.name === '种植面积' ? '万亩' : val.data.name === '产量' ? '个' : '万元/个'}</li>
                           <li>变化率：<span style="color:#fff;font-weight: bold;">${val.data.value.toFixed(2)}</span>%↑</li>
                         </ul>`;
                   }

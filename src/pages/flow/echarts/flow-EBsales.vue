@@ -76,7 +76,7 @@
               data: this.echartsData.xdata
             },
             yAxis: {
-              name:'年销量(吨)',
+              name:'年采购量(个)',
               nameTextStyle: {
                 color: '#fff',
                 fontSize: 16,
@@ -114,7 +114,7 @@
             },
             series: [
               {
-                name: '电商销量',
+                name: '年采购额（万元）',
                 type: 'line',
                 smooth: true,
                 symbol: 'circle',

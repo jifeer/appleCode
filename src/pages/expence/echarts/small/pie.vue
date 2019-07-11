@@ -47,7 +47,7 @@
             //formatter: '{d}%\n{b}',
           },
           title: {
-            text: '价位\n(元/公斤)',
+            text: '价位\n(万元/个)',
             textStyle: {
               fontSize: 18,
               fontWeight: 'normal',

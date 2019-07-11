@@ -38,7 +38,7 @@
             ...tooltipStyle,
             trigger: 'item',
             formatter: function ({data}) {
-              let zhong = me.timeType === 'month' ? '吨' : '万吨'
+              let zhong = me.timeType === 'month' ? '吨' : '个'
               return me.tradeType === '贸易额' ? `${data.name}：${data.value}万美元` : `${data.name}：${data.value}${zhong}`
             },
           },

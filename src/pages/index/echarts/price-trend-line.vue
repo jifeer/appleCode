@@ -49,10 +49,10 @@
               },
               formatter: (params) => {
                 return `${params[0].name}<br>
-			        	        ${params[0].marker}${params[0].seriesName}：${params[0].value === '-' ? 0 : params[0].value}元/公斤<br/>
-			        	        ${params[1].marker}${params[1].seriesName}：${params[1].value === '-' ? 0 : params[1].value}元/公斤<br/>
-			        	        ${params[2].marker}${params[2].seriesName}：${params[2].value === '-' ? 0 : params[2].value}元/公斤<br/>
-			        	        ${params[3].marker}${params[3].seriesName}：${params[3].value === '-' ? 0 : params[3].value}元/公斤`
+			        	        ${params[0].marker}${params[0].seriesName}：${params[0].value === '-' ? 0 : params[0].value}万元/个<br/>
+			        	        ${params[1].marker}${params[1].seriesName}：${params[1].value === '-' ? 0 : params[1].value}万元/个<br/>
+			        	        ${params[2].marker}${params[2].seriesName}：${params[2].value === '-' ? 0 : params[2].value}万元/个<br/>
+			        	        ${params[3].marker}${params[3].seriesName}：${params[3].value === '-' ? 0 : params[3].value}万元/个`
               }
             },
             grid: {
@@ -90,7 +90,7 @@
               axisTick: {
                 show: false
               },
-              name: '价格（元/公斤）',
+              name: '价格（万元/个）',
               nameTextStyle: {
                 color: '#fff',
                 padding: [0, 0, 0, 50]
@@ -119,7 +119,7 @@
             }],
             series: [
               {
-                name: '零售价格',
+                name: '采购总数',
                 type: 'line',
                 smooth: true,
                 symbolSize: 5,
@@ -135,7 +135,7 @@
 
               },
               {
-                name: '批发价格',
+                name: '采购总额',
                 type: 'line',
                 symbolSize: 5,
                 symbol: 'circle',
@@ -153,7 +153,7 @@
                 data: this.trend.seriesData[1],
               },
               {
-                name: '出口价格',
+                name: '成都采购总额',
                 type: 'line',
                 symbolSize: 5,
                 symbol: 'circle',
@@ -171,7 +171,7 @@
                 data: this.trend.seriesData[2],
               },
               {
-                name: '进口价格',
+                name: '成都采购总数',
                 type: 'line',
                 symbolSize: 5,
                 symbol: 'circle',

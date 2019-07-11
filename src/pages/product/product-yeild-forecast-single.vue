@@ -1,7 +1,7 @@
 <template>
   <div class="product-yeild-wrapper big-wrapper">
     <div class="bigW-intro">
-      根据<span>{{apiParams.AREA_NAME}}</span>苹果主产区气象条件，<span>{{titleInfo.desYear}}</span>年单产预测为<span>{{titleInfo.value}}</span>公斤/亩，同比{{titleInfo.desResult}}<span class="title-num">{{titleInfo.desPercent}}</span>。</div>
+      根据<span>{{apiParams.AREA_NAME}}</span>苹果主产区气象条件，<span>{{titleInfo.desYear}}</span>年单产预测为<span>{{titleInfo.value}}</span>万元/个，同比{{titleInfo.desResult}}<span class="title-num">{{titleInfo.desPercent}}</span>。</div>
     <div class="bigW-option">
       <selectTime @chooseTime="_chooseTime" url="apple/production/getDcycTime" defaultTimeType="年度" :timeTypeData="timeTypeData" :areaId="areaId"></selectTime>
       <!--<explain :eText="eText"></explain>-->
@@ -79,7 +79,7 @@
 
       // get data from server
       getChartData() {
-        this.$xhr.get('apple/production/yieldForecast', {
+        this.$xhr.get('/static/json/sample/yield_forecast.json', {
             params: {
               ...this.apiParams
             }

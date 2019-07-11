@@ -91,7 +91,7 @@
       },
       rankTitile() {
         let desc = this.exportType === '出口' ? '出口去向' : '进口来源'
-        let trade = this.tradeType === '贸易额' ? '万美元' : this.timeType === 'month' ? '吨' : '万吨'
+        let trade = this.tradeType === '贸易额' ? '万美元' : this.timeType === 'month' ? '吨' : '个'
         return `${this.area}${this.appleType}${this.tradeType}${desc}排名（${trade}）`
       },
       pieTitle() {

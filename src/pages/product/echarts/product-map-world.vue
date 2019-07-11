@@ -63,7 +63,7 @@
               if (params.value) {
                 return `<div style="text-align: left;">
                         <p>${params.data.name}</p>
-                        <p>${params.data.type == '121689' ? '种植面积' + (params.data.value ? params.data.value.toFixed(2) : '-') + '万亩' : params.data.type == '112716' ? '产量：' + (params.data.value ? params.data.value.toFixed(2) : '-') + '万吨' : '-'}</p>
+                        <p>${params.data.type == '121689' ? '种植面积' + (params.data.value ? params.data.value.toFixed(2) : '-') + '万亩' : params.data.type == '112716' ? '产量：' + (params.data.value ? params.data.value.toFixed(2) : '-') + '个' : '-'}</p>
                         <p>占比：${params.data.percent ? params.data.percent : '-'}%</p>
                         </div>
                         `

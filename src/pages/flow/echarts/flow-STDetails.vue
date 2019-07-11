@@ -86,7 +86,7 @@
               data: this.echartsDatab.xdata
             },
             yAxis: {
-              name: '（吨）',
+              name: '（个）',
               nameTextStyle: {
                 color: '#fff',
                 align: "center",

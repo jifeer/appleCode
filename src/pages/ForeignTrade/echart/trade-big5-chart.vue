@@ -99,7 +99,7 @@
           },
           yAxis: {
             type: 'value',
-            name:'价格（元/公斤）',
+            name:'价格（万元/个）',
             nameTextStyle: {
               fontSize: 18,
               color: "#fff",

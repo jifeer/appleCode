@@ -235,7 +235,7 @@
               bottom: '5%',
               itemWidth: '5%',
               itemHeight:'50%',
-              text: ['','万吨'],
+              text: ['','个'],
               textStyle: {
                 color: '#fff'
               }

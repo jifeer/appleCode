@@ -84,7 +84,7 @@
             formatter: function (params) {
               let str = params[0].name + '<br>'
               params.forEach((item, index) => {
-                let unite = item.componentSubType === 'bar' ? '万吨' : '％'
+                let unite = item.componentSubType === 'bar' ? '个' : '％'
                 str += `${item.seriesName}：${item.value}${unite}<br>`
               })
               return str
@@ -119,7 +119,7 @@
             },
           }],
           yAxis: [{
-            name: "贸易量（万吨）",
+            name: "贸易量（个）",
             nameTextStyle: {
               fontSize: 18,
               padding: [0, 0, 15, 0],

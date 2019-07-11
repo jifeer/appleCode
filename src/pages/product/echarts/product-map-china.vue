@@ -113,7 +113,7 @@
         for (var l = 0; l < ls.length; l++) {
           this.map.removeLayer(ls[l]);
         }
-        var lay = new T.TileLayer("http://t" + T.q.W(0, 7) + ".tianditu.cn/img_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&tileMatrixSet=c&TileMatrix={z}&TileRow={y}&TileCol={x}", {
+        var lay = new T.TileLayer("http://t" + T.q.W(0, 7) + ".tianditu.gov.cn/img_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&tileMatrixSet=c&TileMatrix={z}&TileRow={y}&TileCol={x}&tk=aa303c60a22c95a43fb8b5cd58bd501d", {
           minZoom: 1,
           maxZoom: 18,
           opacity: 1,
@@ -336,7 +336,7 @@
                         <td>${props.AREANAME}</td>
                       </tr>
                       <tr>
-                       <td>${props.type == '121689' ? '种植面积：' + (props.PLANT_AREA ? props.PLANT_AREA.toFixed(2) : '-') + '万亩' : props.type == '112716' ? '产量：' + (props.PLANT_AREA ? props.PLANT_AREA.toFixed(2) : '-') + '万吨' : '-'}<td/>
+                       <td>${props.type == '121689' ? '种植面积：' + (props.PLANT_AREA ? props.PLANT_AREA.toFixed(2) : '-') + '万亩' : props.type == '112716' ? '产量：' + (props.PLANT_AREA ? props.PLANT_AREA.toFixed(2) : '-') + '个' : '-'}<td/>
                       </tr>
                       <tr>
                        <td>排名：${props.AREARANKING}</td>
@@ -410,7 +410,7 @@
                         <td>${props.AREANAME}</td>
                       </tr>
                       <tr>
-                       <td>${props.type == '121689' ? '种植面积：' + (props.PLANT_AREA ? props.PLANT_AREA.toFixed(2) : '-') + '万亩' : props.type == '112716' ? '产量：' + (props.PLANT_AREA ? props.PLANT_AREA.toFixed(2) : '-') + '万吨' : '-'}<td/>
+                       <td>${props.type == '121689' ? '种植面积：' + (props.PLANT_AREA ? props.PLANT_AREA.toFixed(2) : '-') + '万亩' : props.type == '112716' ? '产量：' + (props.PLANT_AREA ? props.PLANT_AREA.toFixed(2) : '-') + '个' : '-'}<td/>
                       </tr>
                       <tr>
                        <td>排名：${props.AREARANKING}</td>

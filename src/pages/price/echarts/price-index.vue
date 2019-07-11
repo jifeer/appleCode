@@ -155,7 +155,7 @@
                   return;
                 } else {
                   let str = "鲜苹果批发价格<br>";
-                  str += params.name + '：<b style="color:#ffa600;font-weight: blod;font-size:18px;">' + params.value + "</b>元/公斤" + "<br>";
+                  str += params.name + '：<b style="color:#ffa600;font-weight: blod;font-size:18px;">' + params.value + "</b>万元/个" + "<br>";
                   return str
                 }
 
@@ -328,7 +328,7 @@
         this.currentMap = id;
       },
       showProvince(province) {
-        axios.get('./static/json/map/province/' + province + '.json').then((geoJson) => {
+        axios.get('.//static/json/map/province/' + province + '.json').then((geoJson) => {
           this.$echarts.registerMap(province, geoJson.data);
           this.showMap(province, '');
         });

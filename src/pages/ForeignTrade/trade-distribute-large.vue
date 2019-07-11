@@ -97,7 +97,7 @@
       },
       rankTitle() {
         let desc = this.exportType === '出口' ? '出口' : '进口'
-        let unite = this.appleType === '苹果干' ?  '吨' : '万吨'
+        let unite = this.appleType === '苹果干' ?  '吨' : '个'
         return `${this.area}${this.appleType}${desc}贸易排名（${unite}）`
       }
     },

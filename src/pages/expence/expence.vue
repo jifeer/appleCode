@@ -3,11 +3,11 @@
     <leftBar></leftBar>
     <div class="cont">
       <div class="cont-top cont-item">
-        <h3 class="body-header">{{bdArea}}苹果消费</h3>
+        <h3 class="body-header">{{bdArea}}供应商分析</h3>
         <div class="body-filter">
           <selectTime class="selectTime" :timeTypeData="timeTypeData" @chooseTime="_bdChooseTime" url="apple/consume/status/consumeTotalTimes" defaultTimeType="年度"></selectTime>
-          <selectDiy @change="_bdChangeDiy" url="apple/consume/status/getArea?requestNum=20" defaultOption="中国"></selectDiy>
-          <explain>中国消费总量=产量-净出口-损耗，净出口=鲜苹果出口量-鲜苹果进口量+苹果汁出口量*8，损耗=产量*8%，数据起始于1993年，来源于农业农村部；全球数据来源FAO，起始于1993年。*年份表示预测数据</explain>
+          <selectDiy @change="_bdChangeDiy" url="apple/consume/status/getArea?requestNum=20" defaultOption="成都"></selectDiy>
+          <explain>供应商规模分类图</explain>
         </div>
         <div class="body-cont">
           <div class="bar">
@@ -22,20 +22,20 @@
         <p class="trade-bottom-title"></p>
         <div class="body-filter">
           <selectBtn :btnData="btnData" :btnIndex.sync="btnIndex" @changeBtn="_changeBtn"></selectBtn>
-          <explain>全球人均消费总量＝全球人均鲜食消费＋全球加工消费。数据起始于1993年，来源于FAO。</explain>
+          <explain>成都市供应商规模分类饼图</explain>
         </div>
         <div class="body-cont">
           <body-consumption-person :data="ApiDataDown" :selectType="selectType" v-if="Object.keys(ApiDataDown).length"></body-consumption-person>
         </div>
       </div>
       <div class="small-window-wrapper">
-        <smallWindow class="window1" :isShow="window1" whichWindow="window1" @closeWindow="closeWindow" @openBigWindow="openBigWindow" title="全国鲜苹果消费产地来源偏好">
+        <smallWindow class="window1" :isShow="window1" whichWindow="window1" @closeWindow="closeWindow" @openBigWindow="openBigWindow" title="成都市供应商地区分布">
           <small-bar-one :data="smallBar1Data" v-if="smallBar1Data.length"></small-bar-one>
         </smallWindow>
-        <smallWindow class="window2" @closeWindow="closeWindow" :isShow="window2" whichWindow="window2" title="全国鲜苹果消费产品偏好" @openBigWindow="openBigWindow">
+        <smallWindow class="window2" @closeWindow="closeWindow" :isShow="window2" whichWindow="window2" title="供应商地区偏好" @openBigWindow="openBigWindow">
           <small-pie :data="small2PieData" v-if="small2PieData.length"></small-pie>
         </smallWindow>
-        <smallWindow class="window3" @closeWindow="closeWindow" :isShow="window3" whichWindow="window3" title="苹果国内消费需求影响因素" @openBigWindow="openBigWindow">
+        <smallWindow class="window3" @closeWindow="closeWindow" :isShow="window3" whichWindow="window3" title="供应商地区分布影响因素" @openBigWindow="openBigWindow">
           <small-bar-two :data="largeBar5Data" v-if="Object.keys(largeBar5Data).length"></small-bar-two>
         </smallWindow>
       </div>
@@ -47,7 +47,7 @@
         <li :class="{'active':active3}" @click="showSmall('window3')"><i class="iconfont icon-xiaofei-xuqiuyingxiangyinsu"></i></li>
       </ul>
     </div>
-    <bigWindow title="全国鲜苹果消费产地来源偏好" :isShow="bigwindow1" whichWindow="bigwindow1" @closeWindow="closeWindow" @closeBigWindow="closeBigWindow">
+    <bigWindow title="成都市供应商地区分布偏好" :isShow="bigwindow1" whichWindow="bigwindow1" @closeWindow="closeWindow" @closeBigWindow="closeBigWindow">
       <div class="big-one bigpop">
         <h3 class="desc">
           <span>{{big1Title}}</span>
@@ -62,7 +62,7 @@
         </div>
       </div>
     </bigWindow>
-    <bigWindow title="全国鲜苹果消费产品偏好" :isShow="bigwindow2" whichWindow="bigwindow2" @closeWindow="closeWindow" @closeBigWindow="closeBigWindow">
+    <bigWindow title="成都市供应商地区分布性质偏好" :isShow="bigwindow2" whichWindow="bigwindow2" @closeWindow="closeWindow" @closeBigWindow="closeBigWindow">
       <div class="big-two bigpop">
         <h3 class="desc">
           <span>{{big2Title}}</span>
@@ -70,7 +70,7 @@
         <div class="big-filter">
           <selectDiy @change="_big2ChangeDiy" url="apple/consume/feature/getCity"></selectDiy>
           <selectBtn :btnData="monthOrYear" @changeBtn="_big2ChooseTime" :btnIndex.sync="bigBtn2" class="marginRight"></selectBtn>
-          <explain>中国消费总量=产量-净出口-损耗，净出口=鲜苹果出口量-鲜苹果进口量+苹果汁出口量*8，损耗=产量*8%，数据起始于1993年，来源于农业农村部；全球数据起始于1993年，来源于FAO。*表示通过年均变化率计算的预测数据。</explain>
+          <explain>成都市供应商地区分布性质偏好。*表示通过年均变化率计算的预测数据。</explain>
         </div>
         <div class="charts-container">
           <big-pie class="echart" title="0" :key="0" :data="ApiBig2Pie" v-if="ApiBig2Pie.length"></big-pie>
@@ -82,7 +82,7 @@
         </div>
       </div>
     </bigWindow>
-    <bigWindow title="苹果国内消费需求影响因素" :isShow="bigwindow3" whichWindow="bigwindow3" @closeWindow="closeWindow" @closeBigWindow="closeBigWindow">
+    <bigWindow title="供应商地区分布影响因素" :isShow="bigwindow3" whichWindow="bigwindow3" @closeWindow="closeWindow" @closeBigWindow="closeBigWindow">
       <div class="big-three bigpop">
         <div class="item item-top">
           <div class="big-filter">
@@ -153,13 +153,13 @@
         btnIndex: 1, // selectBtn 组件
         btnIndexbig2: 1, // 大弹窗
         btnData: [{ // selectBtn 组件
-          name: '消费总量',
+          name: '采购总量',
           value: 0
         }, {
-          name: '鲜食消费',
+          name: '主要采购项目',
           value: 1
         }, {
-          name: '加工消费',
+          name: '次要采购项目',
           value: 2
         }],
 
@@ -208,13 +208,13 @@
 
         selectIndex: 1,
         selectData: [{
-          name: '需求收入弹性',
+          name: '采购预算弹性',
           value: 1
         }, {
-          name: '需求价格弹性',
+          name: '采购项目价格弹性',
           value: 0
         }, {
-          name: '需求交叉价格弹性',
+          name: '采购项目总额弹性',
           value: 2
         }],
       }
@@ -239,7 +239,7 @@
         } else {
           time1 = this.scorllTime
         }
-        return `${time1}${bigTimeType1}山东苹果销量占电商总量的${this.sdApple}%`
+        return `${time1}${bigTimeType1}市局采购量占采购总量的${this.sdApple}%`
       },
       //大弹窗2的标题
       big2Title() {
@@ -250,7 +250,7 @@
         } else {
           time2 = this.scorllTime2
         }
-        return `${time2}${bigTimeType2}价格${this.topGrade}元/公斤、果径${this.topDiameter}mm、包装重量${this.topWeight}公斤的苹果最受消费者欢迎`
+        return `${time2}${bigTimeType2}价格${this.topGrade}万元/个、产品为${this.topDiameter}的项目最受各级政府欢迎`
       },
       //大弹窗3的标题
       big3Title() {
@@ -259,7 +259,7 @@
         } else if (this.queryType === '1') {
           return '2004年度之后需求弹性系数基本在0到1之间，表明收入对需求有稳定的正效应'
         } else {
-          return '需求交叉弹性多为正值，表明替代品（香梨）价格对苹果需求量有正效应'
+          return '需求交叉弹性多为正值，表明项目价格对项目需求量有正效应'
         }
       },
       //主图1参数

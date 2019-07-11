@@ -68,7 +68,7 @@
             }
           },
           title: {
-            text: '果径规格\n(mm)',
+            text: '采购额度',
             textStyle: {
               fontSize: 16,
               fontWeight: 'normal',

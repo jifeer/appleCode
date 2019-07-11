@@ -2,13 +2,13 @@
   <div class="product-historical-wrapper">
     <div class="chart-up">
       <div class="chart-option">
-        <!--<div class="title-info"> <span>2002-2016</span>年，<span>全国</span>苹果产量年平均增长率 <span class="title-num">5.44</span>%</div>-->
+        <!--<div class="title-info"> <span>2002-2016</span>年，<span>成都</span>采购总额年平均增长率 <span class="title-num">5.44</span>%</div>-->
         <div class="center-assist"></div>
         <!--时间选择组件-->
-        <selectTime @chooseTime="_chooseTime" url="apple/production/getChinaHistoryTime" defaultTimeType="年度"
+        <selectTime @chooseTime="_chooseTime" url="/static/json/sample/prd/china_his_time.json" defaultTimeType="年度"
                     :timeTypeData="timeTypeData" :areaId="areaId"></selectTime>
         <!--地区多选组件-->
-        <selectArea url="apple/production/region" @change="_changeArea"></selectArea>
+        <selectArea url="/static/json/sample/prd/sel_region.json" @change="_changeArea"></selectArea>
         <!--<selectArea @change="_change" url="apple/price/warning/getCity"></selectArea>-->
         <!--条件切换组件-->
         <p>
@@ -52,7 +52,7 @@
     name: 'line',
     data() {
       return {
-        btnData: ['种植面积', '产量', '单产'],
+        btnData: ['采购总量', '采购总额', '单产'],
         btnIndex: 1,
         eTextUp: '数据起始于1982年，级别为全国、省级，来源于农业农村部。',
         // 弹窗 上图数据
@@ -66,9 +66,9 @@
         },
         // 上大图 轴线&legend 数据
         axisData: {
-          yAxisNameL: '产量（万吨）',
+          yAxisNameL: '数量（个）',
           yAxisNameR: '变化率（%）',
-          type: '产量',
+          type: '采购总量',
           isXian: false
         },
 
@@ -125,17 +125,17 @@
 
       // 改变数据 类型
       _changeBtn(name){
-        if (name === '种植面积') {
+        if (name === '采购总量') {
           this.params.type = '121689'
-          this.axisData.yAxisNameL = '面积（万亩）'
-          this.axisData.type = '种植面积'
-        } else if (name === '产量') {
+          this.axisData.yAxisNameL = '项目（个）'
+          this.axisData.type = '采购总量'
+        } else if (name === '采购总额') {
           this.params.type = '112716'
-          this.axisData.yAxisNameL = '产量（万吨）'
-          this.axisData.type = '产量'
+          this.axisData.yAxisNameL = '总额（万元）'
+          this.axisData.type = '采购总额'
         } else if (name === '单产') {
           this.params.type = '单产'
-          this.axisData.yAxisNameL = '单产（公斤/亩）'
+          this.axisData.yAxisNameL = '单产（万元/个）'
           this.axisData.type = '单产'
         }
       },
@@ -163,7 +163,7 @@
       // 获取上图的数据
       getUpChartData() {
         // 发送ajax请求数据
-        this.$xhr.get(`apple/production/change`, {
+        this.$xhr.get(`/static/json/sample/prd/prd_change.json`, {
           params: {
             ...this.apiUpParams
           }
@@ -179,7 +179,7 @@
 
       // 获取下图的数据
       getDownChartData() {
-        this.$xhr.get(`apple/production/pAcFor`, {
+        this.$xhr.get(`/static/json/sample/prd/down_chart_data.json`, {
           params: {
             ...this.apiDownParams
           }

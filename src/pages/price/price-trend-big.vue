@@ -155,15 +155,15 @@
           let newDay = res.data.tit.nowTime.substr(6, 2)
           if (this.timeType == 'year') {
             //黑龙江省地区，批发和收购价差为7.69元/公斤，2017苹果零售和批发价差为1.90元/公斤，2016出口和批发价差为-1.45元/公斤
-            this.title = res.data.tit.nowTime + '年' + this.areaType + '苹果批发和收购价差为' + res.data.tit.pf_sg + '元/公斤，零售和批发价差为' + res.data.tit.ls_pf + '元/公斤，出口和批发价差为' + res.data.tit.ck_pf + '元/公斤。'
+            this.title = res.data.tit.nowTime + '年' + this.areaType + '苹果批发和收购价差为' + res.data.tit.pf_sg + '万元/个，零售和批发价差为' + res.data.tit.ls_pf + '万元/个，出口和批发价差为' + res.data.tit.ck_pf + '万元/个。'
           }
           if (this.timeType == 'month') {
             //2017年8月黑龙江省地区，苹果零售和批发价差为9.59元/公斤，2017年10月出口和批发价差为0.00元/公斤
-            this.title = newYear + '年' + newMonth + '月' + this.areaType + '苹果零售和批发价差为' + res.data.tit.ls_pf + '元/公斤，出口和批发价差为' + res.data.tit.ck_pf + '元/公斤。'
+            this.title = newYear + '年' + newMonth + '月' + this.areaType + '苹果零售和批发价差为' + res.data.tit.ls_pf + '万元/个，出口和批发价差为' + res.data.tit.ck_pf + '万元/个。'
           }
           if (this.timeType == 'day') {
             //2017年10月31日黑龙江省地区，苹果零售和批发价差为0.00元/公斤
-            this.title = newYear + '年' + newMonth + '月' + newDay + '日' + this.areaType + '苹果零售和批发价差为' + res.data.tit.ls_pf + '元/公斤。'
+            this.title = newYear + '年' + newMonth + '月' + newDay + '日' + this.areaType + '苹果零售和批发价差为' + res.data.tit.ls_pf + '万元/个。'
           }*/
 
 

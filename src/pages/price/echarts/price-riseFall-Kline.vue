@@ -151,7 +151,7 @@
               max: 'dataMax'*/
             },
             yAxis: {
-              name: '价格(元/公斤)',
+              name: '价格(万元/个)',
               nameTextStyle: {
                 fontSize: 16,
                 color: '#fff',

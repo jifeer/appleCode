@@ -122,7 +122,7 @@
     computed: {
       titletext() {
         if (this.title === '0') {
-          return '价位\n(元/公斤)'
+          return '价位\n(万元/个)'
         } else if (this.title === '1') {
           return '果径\n(mm)'
         } else {

@@ -53,7 +53,7 @@
 //                      	console.log(params)
                 if (params.value >= 0) {
                   return "<div style='text-align:left'>" + `苹果产量<br>
-		                	        ${params.name}：${params.value}万吨` + "</div>"
+		                	        ${params.name}：${params.value}个` + "</div>"
                 } else {
                   return ''
                 }

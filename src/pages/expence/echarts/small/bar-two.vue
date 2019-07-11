@@ -115,7 +115,7 @@ export default {
         color:["#40b0fc","#0e62d4","#4c58b1","#c37837","#c0bb3e"],
         series: [
           {
-            name: '苹果价格',
+            name: '成都项目价格',
             type: 'bar',
             barWidth : 15,
             barGap: 1,
@@ -130,7 +130,7 @@ export default {
             }
           },
           {
-            name: '国内生产总值',
+            name: '成都预算总值',
             type: 'bar',
             barWidth : 15,
             barGap: 1,
@@ -145,7 +145,7 @@ export default {
             }
           },
           {
-            name: '苹果替代品价格',
+            name: '区市项目价格',
             type: 'bar',
             barWidth : 15,
             barGap: 1,

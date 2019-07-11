@@ -64,7 +64,7 @@
         },
         // 上大图 轴线&legend 数据 默认值
         axisData: {
-          yAxisNameL: '产量（万吨）',
+          yAxisNameL: '产量（个）',
           yAxisNameR: '变化率（%）',
           type: '产量',
           isXian: true,
@@ -126,11 +126,11 @@
           this.axisData.type = '种植面积'
         } else if(name === '产量'){
           this.params.type = '112716'
-          this.axisData.yAxisNameL = '产量（万吨）'
+          this.axisData.yAxisNameL = '产量（个）'
           this.axisData.type = '产量'
         } else if(name === '单产'){
           this.params.type = '单产'
-          this.axisData.yAxisNameL = '公斤/亩'
+          this.axisData.yAxisNameL = '万元/个'
           this.axisData.type = '单产'
         }
       },

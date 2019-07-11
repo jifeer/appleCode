@@ -63,11 +63,11 @@
           },
           tooltip: {
             trigger: 'axis',
-//              formatter: '{b}<br />{a0}: {c0}公斤/亩<br />{a1}: {c1}公斤/亩',
+//              formatter: '{b}<br />{a0}: {c0}万元/个<br />{a1}: {c1}万元/个',
             formatter: function (params) {
               let text = '<div style="padding: 6px"><p style="width: 100%; text-align: left">' + params[0].axisValue + '</p>';
               params.forEach(function (val, index) {
-                text += '<p style="text-align: left">' + val.seriesName + '： ' + val.value + '公斤/亩' + '</p>'
+                text += '<p style="text-align: left">' + val.seriesName + '： ' + val.value + '万元/个' + '</p>'
               })
               text += `</div>`
               return text;
@@ -125,7 +125,7 @@
           }],
           yAxis: [{
             type: 'value',
-            name: '单产（公斤/亩）',
+            name: '单产（万元/个）',
             nameTextStyle: {
               fontSize: 18,
               color: '#fff',

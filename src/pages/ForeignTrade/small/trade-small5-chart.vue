@@ -52,7 +52,7 @@
             formatter: function(params) {
               let str = params[0].name + '<br>'
               params.forEach((item, index) => {
-                str += `${item.seriesName}： ${item.value}元/公斤<br>`
+                str += `${item.seriesName}： ${item.value}万元/个<br>`
               })
               return str
             }
@@ -112,7 +112,7 @@
           },
           yAxis: {
             type: 'value',
-            name: '价格（元/公斤）',
+            name: '价格（万元/个）',
             nameTextStyle: {
               fontSize: 12,
               color: "#fff",

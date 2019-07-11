@@ -114,7 +114,7 @@
           yAxis: [{
             axisLabel: axisLabel,
             type: 'value',
-            //name: '(万吨)',
+            //name: '(个)',
             name:'',
             nameTextStyle: {
               fontSize: 18,
@@ -240,7 +240,7 @@
 
         let yUnite = ''
         if (this.appleType !== '苹果干') {
-          yUnite = this.tradeType === '贸易量' ? '万吨' : '万美元'
+          yUnite = this.tradeType === '贸易量' ? '个' : '万美元'
         } else {
           yUnite = this.tradeType === '贸易量' ? '吨' : '美元'
         }

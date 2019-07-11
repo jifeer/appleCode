@@ -48,8 +48,8 @@
               backgroundColor: '#099d4f',
               formatter: (params) => {
                 return `${params[0].name}<br>
-			        	        ${params[0].marker}${params[0].seriesName}：${params[0].value}元/亩<br/>
-			        	        ${params[1].marker}${params[1].seriesName}：${params[1].value}元/亩<br/>
+			        	        ${params[0].marker}${params[0].seriesName}：${params[0].value}万元/个<br/>
+			        	        ${params[1].marker}${params[1].seriesName}：${params[1].value}万元/个<br/>
 			        	        ${params[2].marker}${params[2].seriesName}：${params[2].value.toFixed(2)}%`
               }
             },
@@ -82,7 +82,7 @@
             },
             yAxis: [
               {
-                name: '元/亩',
+                name: '万元/个',
                 nameTextStyle: {
                   color: '#fff',
                   fontSize: '12',

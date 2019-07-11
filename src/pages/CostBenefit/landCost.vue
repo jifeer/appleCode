@@ -44,7 +44,7 @@
           timeData: [],
           option: {
             yAxis: {
-              name: '元/亩',
+              name: '万元/个',
             }
           },
         },
@@ -79,12 +79,12 @@
       _changeBtn(val) {
         if (val == 0) {
           this.type = 101002
-          this.landChartData.option.yAxis.name = '元/亩'
+          this.landChartData.option.yAxis.name = '万元/个'
           this.item = true
         }
         else {
           this.type = 101018
-          this.landChartData.option.yAxis.name = '元/公斤'
+          this.landChartData.option.yAxis.name = '万元/个'
           this.item = false
         }
       },

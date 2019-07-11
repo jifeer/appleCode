@@ -84,7 +84,7 @@
               data: [],
             },
             yAxis: {
-              name: '            每亩化肥用量（公斤）',
+              name: '            每地区采购数量（个）',
               nameTextStyle: {
                 color: '#fff',
                 fontSize: '12',
@@ -165,7 +165,7 @@
         this.option.tooltip.formatter = (params) => {
           let tooltip = "<div style='text-align:left'>" + params[0].name + "年<br/>"
           for (let index = 0; index < params.length; index++) {
-            tooltip += params[index].marker + params[index].seriesName + "：" + params[index].value + "公斤/亩<br/>"
+            tooltip += params[index].marker + params[index].seriesName + "：" + params[index].value + "万元/个<br/>"
           }
           return tooltip + "</div>"
         }

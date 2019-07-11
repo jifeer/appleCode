@@ -11,8 +11,8 @@
         <router-link class="nav-item row standard" :to="{name:'product'}">
           <div class="index-description">
             <div class="title"><span class="map-year">{{aYieldTitle}}</span><span>年，</span><span
-              class="map-region">全国</span><span>苹果</span><span class="map-status">产量</span><span class="map-data">{{aYield}}</span><span
-              class="map-unites">万吨</span></div>
+              class="map-region">政府</span><span>采购</span><span class="map-status">总量</span><span class="map-data">{{aYield}}</span><span
+              class="map-unites">万元</span></div>
           </div>
           <div class="index-cont">
             <div class="echart-inst" id="crop-left">
@@ -24,7 +24,7 @@
         <!--左二图-->
         <router-link class="nav-item row standard" :to="{name:'product'}">
           <div class="index-description">
-            <div class="title">预计全国{{titleInfo.desYear}}年苹果单产{{titleInfo.desPrice}}公斤/亩，同比{{titleInfo.desResult}}{{titleInfo.desPercent}}</div>
+            <div class="title">预计成都{{titleInfo.desYear}}年政府采购{{titleInfo.desPrice}}万元，同比{{titleInfo.desResult}}{{titleInfo.desPercent}}</div>
           </div>
           <div class="echart-inst" id="affect-analyse">
             <yieldForecastchart :yechartsData="yechartsData"></yieldForecastchart>
@@ -33,7 +33,7 @@
         <!--左三图-->
         <router-link class="nav-item row standard" :to="{name:'CostBenefit'}">
           <div class="index-description">
-            <div class="title">{{profitTitle}}年，苹果净利润{{profit}}元／亩，折算每公斤{{profitPrice}}元</div>
+            <div class="title">{{profitTitle}}年，政府采购{{profit}}万元</div>
           </div>
           <div class="echart-inst" id="profit">
             <costProfitchart :cbchartData="cbchartData"></costProfitchart>
@@ -44,32 +44,32 @@
         <div class="row row-one">
           <div class="decorate-left">
             <div class="shadow-left"></div>
-            <span class="menu-supply">供给侧分析</span>
+            <span class="menu-supply">采购方分析</span>
           </div>
           <div class="decorate-right">
             <div class="shadow-right"></div>
-            <span class="menu-demand">需求侧分析</span>
+            <span class="menu-demand">供求方分析</span>
           </div>
           <div class="true-mid">
             <div class="item navigator">
               <ul class="nav">
                 <router-link class="nav-item" tag="li" :to="{name:'product'}">
-                  <p><i class="icon iconfont icon-guoshumiaomu"></i><br/><span>生产</span></p>
+                  <p><i class="icon iconfont icon-guoshumiaomu"></i><br/><span>采购地区</span></p>
                 </router-link>
                 <router-link class="nav-item" tag="li" :to="{name:'flow'}">
-                  <p><i class="iconfont icon-icon1460188803541"></i><br/><span>流通</span></p>
+                  <p><i class="iconfont icon-icon1460188803541"></i><br/><span>代理机构</span></p>
                 </router-link>
                 <router-link class="nav-item" tag="li" :to="{name:'price'}">
-                  <p><i class="iconfont icon-jiage"></i><br/><span>价格</span></p>
+                  <p><i class="iconfont icon-jiage"></i><br/><span>采购总规模</span></p>
                 </router-link>
                 <router-link class="nav-item" tag="li" :to="{name:'expence'}">
-                  <p><i class="iconfont icon-xiaofei"></i><br/><span>消费</span></p>
+                  <p><i class="iconfont icon-xiaofei"></i><br/><span>行业代码</span></p>
                 </router-link>
                 <router-link class="nav-item" tag="li" :to="{name:'ForeignTrade'}">
-                  <p><i class="iconfont icon-shijieditu"></i><br/><span>贸易</span></p>
+                  <p><i class="iconfont icon-shijieditu"></i><br/><span>供应商</span></p>
                 </router-link>
                 <router-link class="nav-item" tag="li" :to="{name:'CostBenefit'}">
-                  <p><i class="iconfont icon-yizhuanshouyi"></i><br/><span>成本收益</span></p>
+                  <p><i class="iconfont icon-yizhuanshouyi"></i><br/><span>服务领域</span></p>
                 </router-link>
 
               </ul>
@@ -93,7 +93,7 @@
           <!--中下左图-->
           <router-link class="nav-item half standard " :to="{name:'price'}">
             <div class="index-description">
-              <div class="title">鲜苹果各环节价格</div>
+              <div class="title">成都市采购总额</div>
 
             </div>
             <div class="echart-inst" id="import-quantity">
@@ -103,7 +103,7 @@
           <!--中下右图-->
           <router-link class="nav-item half standard " :to="{name:'flow'}">
             <div class="index-description">
-              <div class="title">{{requestMonth}}全国苹果销售流向监测</div>
+              <div class="title">{{requestMonth}}成都市采购分布监测</div>
             </div>
             <div class="echart-inst" id="export-quantity">
               <saleTo :auxiliary="auxiliary" :flag="flag" :mapEchartsData="mapEchartsData"></saleTo>
@@ -115,7 +115,7 @@
         <!--右一图-->
         <router-link class="nav-item row standard" :to="{name:'expence'}">
           <div class="index-description">
-            <div class="title">近10年来，我国苹果产量和消费量基本维持增长状态，增速有所下降</div>
+            <div class="title">近10年来，成都市采购总额和采购总量基本维持增长状态，增速有所下降</div>
           </div>
           <div class="echart-inst" id="market">
             <topBarLine :tradeTopBarData="tradeTopBarData"></topBarLine>
@@ -124,7 +124,7 @@
         <!--右二图-->
         <router-link class="nav-item row standard " :to="{name:'expence'}">
           <div class="index-description">
-            <div class="title">2017年，果径规格在{{maxTitle}}mm的苹果更受消费者欢迎</div>
+            <div class="title">2017年，系统XXX【万元】的软件系统更受各地市政府欢迎</div>
           </div>
           <div class="echart-inst" id="flexibility">
             <fruitWidth @maxTitle="title" :fWchartData="fWchartData"></fruitWidth>
@@ -133,7 +133,7 @@
         <!--右三图-->
         <router-link class="nav-item row standard" :to="{name:'ForeignTrade'}">
           <div class="index-description">
-            <div class="title">{{exportTitle}}，我国鲜苹果出口量{{exportfreshApple}}万吨，苹果汁出口量{{exportappleJuice}}万吨</div>
+            <div class="title">{{exportTitle}}，成都市采购总量{{exportfreshApple}}个，各地市采购总量{{exportappleJuice}}个</div>
           </div>
           <div class="echart-inst" id="forecast">
             <exportChart :exportDate="exportDate"></exportChart>
@@ -170,8 +170,8 @@
         aYieldData: {
           data: [],
         },
-        aYieldTitle: null,
-        aYield: null,
+        aYieldTitle: '',
+        aYield: '',
         //左二图
         yechartsData: {
           xdata: [],
@@ -190,9 +190,9 @@
           timeData: [],
           data: [],
         },
-        profitTitle: null,
-        profit: null,
-        profitPrice: null,
+        profitTitle: '',
+        profit: '',
+        profitPrice: '',
         //中下左图
         trend: {
           xAxisData: [],
@@ -210,7 +210,7 @@
         },
         auxiliary: null,
         marketclass: 1,
-        areas: '全国',
+        areas: '成都',
         flag: true,
         requestMonth: null,
         //右一图
@@ -259,7 +259,7 @@
       //左一图
       renderMap() {
 
-        this.$xhr.get("apple/index/getChinaYieldData")
+        this.$xhr.get("/static/json/sample/china_yield_data.json")
           .then((res) => {
 //           	console.log(res)
             this.aYieldData.data = res.data.data
@@ -271,7 +271,8 @@
       },
       //左二图
       renderYeild() {
-        this.$xhr.get("apple/production/yieldForecast", {
+        this.$xhr.get("/static/json/sample/yield_forecast.json", {
+                  // this.$xhr.get("apple/production/yield_forecast.json", {
           params: {
             AREA_NAME: "全国",
             TIME_ID: "2002,2003,3004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017",
@@ -293,19 +294,20 @@
       },
       //左三图
       renderCBchart() {
-        this.$xhr.get("apple/income/getIndexTrendChange")
+        this.$xhr.get("/static/json/sample/index_trend_change.json")
           .then((res) => {
             this.cbchartData.data = res.data.data
             this.cbchartData.timeData = res.data.time
             this.profitTitle = res.data.title.time
             this.profit = res.data.title.profits
             this.profitPrice = res.data.title.price
+
           })
       },
       //中下左图
       firstLoad() {
 
-        this.$xhr.get("/apple/price/getEveryPriceData", {
+        this.$xhr.get("/static/json/sample/every_price_data.json", {
           params: {
             timeType: 'month',
             areaId: '000000',
@@ -323,7 +325,7 @@
       },
       //中下右图
       getFlowdata() {
-        this.$xhr.get('apple/index/getIndexDetect')
+        this.$xhr.get('/static/json/sample/index_detect.json')
           .then((res) => {
             let dataArr = [];
 //						console.log(res)
@@ -344,7 +346,7 @@
 //
       //右一图
       getTopBarData() {
-        this.$xhr.get("apple/index/getPSaleStatus")
+        this.$xhr.get("/static/json/sample/p_sale_status.json")
           .then((res) => {
             this.tradeTopBarData.allExpense = res.data.allExpense
             this.tradeTopBarData.expenseChangeRate = res.data.expenseChangeRate
@@ -353,8 +355,8 @@
 
             let arr = res.data.time
             arr[arr.length - 1] = arr[arr.length - 1]+"*"
-            
-            if(res.data.lastYearDataFlag){
+
+            if(res.data.flag){
             	arr[arr.length - 2] = arr[arr.length - 2]+"*"
             }
             this.tradeTopBarData.time = arr
@@ -366,7 +368,8 @@
       //右二图
       getfWchartData() {
 
-        this.$xhr.get("apple/consume/feature/getFruitDiameterPreference?TIME_ID=201701,201702,201703,201704,201705,201706,201707,201708,201709,201710,201711,201712&AREA_NAME=%E5%85%A8%E5%9B%BD&TIME_TYPE=month")
+       // this.$xhr.get("apple/consume/feature/getFruitDiameterPreference?TIME_ID=201701,201702,201703,201704,201705,201706,201707,201708,201709,201710,201711,201712&AREA_NAME=%E5%85%A8%E5%9B%BD&TIME_TYPE=month")
+        this.$xhr.get("/static/json/sample/fruit_diameter_preference.json")
           .then((res) => {
 //          	console.log(res)
             this.fWchartData.data = res.data
@@ -379,15 +382,15 @@
       },
       //右三图
       renderExport() {
-        this.$xhr.get("apple/index/getExportInfo")
+        this.$xhr.get("/static/json/sample/export_info.json")
           .then((res) => {
 //        	console.log(res)
             this.exportDate.xdata = res.data.time
             this.exportDate.freshApple = res.data.freshApple
             this.exportDate.appleJuice = res.data.appleJuice
-            this.exportTitle = res.data.titleTime
             this.exportfreshApple = res.data.titleAppleNum
             this.exportappleJuice = res.data.titleJuiceNum
+            this.exportTitle = res.data.titleTime
 
           })
       },

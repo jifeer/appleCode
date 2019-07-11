@@ -13,7 +13,7 @@
     name: 'landChart',
     mixins: [resizeMixin],
     props: {
-    	
+
       landChartData: {
         type: Object,
         default: null
@@ -149,7 +149,7 @@
               data: [],
             },
             yAxis: {
-              name: '元/亩',
+              name: '万元/个',
               nameTextStyle: {
                 color: '#fff',
                 fontSize: '18',
@@ -219,9 +219,9 @@
         })
         //为tootip加单位
         if (this.item == true) {
-          this.unit = "元/亩"
+          this.unit = "万元/个"
         } else {
-          this.unit = "元/公斤"
+          this.unit = "万元/个"
         }
         this.option.tooltip.formatter = (params) => {
           let tooltip = "<div style='text-align:left'>" + params[0].name + "年<br/>"

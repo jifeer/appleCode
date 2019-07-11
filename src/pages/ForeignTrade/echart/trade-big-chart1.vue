@@ -158,9 +158,9 @@
               let str = ''
               if (params.componentSubType === 'effectScatter') {
                 if (me.dir === '出口') {
-                  str = `${params.seriesName} > ${params.name} <br> 交易量：${params.value[2][1]}万吨（${params.value[2][0]}%）`
+                  str = `${params.seriesName} > ${params.name} <br> 交易量：${params.value[2][1]}个（${params.value[2][0]}%）`
                 } else {
-                  str = `${params.name} > ${params.seriesName} <br> 交易量：${params.value[2][1]}万吨（${params.value[2][0]}%）`
+                  str = `${params.name} > ${params.seriesName} <br> 交易量：${params.value[2][1]}个（${params.value[2][0]}%）`
                 }
               }
               return str

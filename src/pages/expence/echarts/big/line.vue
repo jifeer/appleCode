@@ -114,7 +114,7 @@
           },
           series: [
             {
-              name:'全国',
+              name:'成都',
               type:'line',
               data:[],
               symbol:'circle',

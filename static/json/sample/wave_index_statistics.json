@@ -1,0 +1,10 @@
+{
+  "status": 200,
+  "data": {
+    "consumeRateData": "0.61",
+    "requestYear": "2016",
+    "consumeData": 3484,
+    "productData": 4388,
+    "productRateData": "2.98"
+  }
+}

@@ -91,7 +91,7 @@
           yAxis: [{
             type: 'value',
             axisLabel: axisLabel,
-            name: '贸易量(万吨)',
+            name: '贸易量(个)',
             axisLine: {
               show: false
             },

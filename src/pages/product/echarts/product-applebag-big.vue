@@ -27,7 +27,7 @@
         type: Object,
         default: function () {
           return {
-            yAxisNameL: '产量（万吨）',
+            yAxisNameL: '产量（个）',
             yAxisNameR: '变化率（%）',
             type: '纸袋',
             isXian: false

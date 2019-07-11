@@ -26,9 +26,9 @@
         type: Object,
         default: function() {
           return {
-            yAxisNameL: '产量（万吨）',
+            yAxisNameL: '采购总额（万元）',
             yAxisNameR: '变化率（%）',
-            type: '产量',
+            type: '采购总额',
             isXian: false
           }
         }
@@ -96,22 +96,22 @@
               params.forEach(function(val, index) {
 //            	console.log(val)
                 let unite = ""
-                if(val.seriesName.indexOf('种植面积')  > -1&& val.seriesType === 'bar'){
-                	 unite = '万亩'
+                if(val.seriesName.indexOf('采购总量')  > -1&& val.seriesType === 'bar'){
+                	 unite = '个'
                 }
-                else if(val.seriesName.indexOf('产量')  > -1&& val.seriesType === 'bar'){
-                	 unite = '万吨'
+                else if(val.seriesName.indexOf('采购总额')  > -1&& val.seriesType === 'bar'){
+                	 unite = '万元'
                 }
                 else if(val.seriesName.indexOf('单产') > -1 && val.seriesType === 'bar' ){
-                	 unite = '公斤/亩'
+                	 unite = '万元/个'
                 }
                 else{
                 	 unite = "%"
                 }
-//              const unite = (val.seriesName.indexOf('种植面积')  > -1 || val.seriesName.indexOf('产量'))  > -1 && val.seriesType === 'bar' ? '万亩' : val.seriesName.indexOf('单产') > -1 && val.seriesType === 'bar' ? '公斤/亩' : '%'
+//              const unite = (val.seriesName.indexOf('种植面积')  > -1 || val.seriesName.indexOf('产量'))  > -1 && val.seriesType === 'bar' ? '万亩' : val.seriesName.indexOf('单产') > -1 && val.seriesType === 'bar' ? '万元/个' : '%'
                 str += `<p style="text-align: left">${val.seriesName}：${val.value || val.value === 0 ? val.value.toFixed(2) : "-"}${unite}`
 //                 if (index % 2 == 0) {
-//                   str += `<p style="text-align: left">${val.seriesName}：${val.value || val.value === 0 ? val.value.toFixed(2) : "-"}${val.seriesName.indexOf("种植面积") >= 0 ? '万亩' : val.seriesName.indexOf("单产") >= 0 ? '公斤/亩' : '万吨'}</p>`
+//                   str += `<p style="text-align: left">${val.seriesName}：${val.value || val.value === 0 ? val.value.toFixed(2) : "-"}${val.seriesName.indexOf("种植面积") >= 0 ? '万亩' : val.seriesName.indexOf("单产") >= 0 ? '万元/个' : '个'}</p>`
 //                 } else {
 //                   str += `<p style="text-align: left">${val.seriesName}：${val.value || val.value === 0 ? val.value.toFixed(2) : "-"}%</p>`
 //                 }
@@ -286,15 +286,15 @@
 
               // 生成新的legend
               newLegendData.push({
-                name: `${this.axisData.isXian?'苹果':item}${this.axisData.type}`,
+                name: `${this.axisData.isXian?'政府采购':item}${this.axisData.type}`,
                 icon: 'rect',
               }, {
-                name: `${this.axisData.isXian?'苹果':item}${this.axisData.type}变化率`,
+                name: `${this.axisData.isXian?'政府采购':item}${this.axisData.type}变化率`,
               })
 
               // 循环遍历生成新的系列
               newSeries.push({
-                name: `${this.axisData.isXian?'苹果':item}${this.axisData.type}`,
+                name: `${this.axisData.isXian?'政府采购':item}${this.axisData.type}`,
                 type: 'bar',
                 //                barWidth: 16,
                 barMaxWidth: 16,
@@ -305,7 +305,7 @@
                 },
                 data: this.echartsData.data[item].data1,
               }, {
-                name: `${this.axisData.isXian?'苹果':item}${this.axisData.type}变化率`,
+                name: `${this.axisData.isXian?'政府采购':item}${this.axisData.type}变化率`,
                 type: 'line',
                 smooth: true,
                 yAxisIndex: 1,

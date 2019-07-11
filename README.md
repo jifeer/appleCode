@@ -83,3 +83,34 @@ scorllOption:{
 }
 ```
 
+啟動錯誤解決辦法
+```
+1. Babel Loader Error: SyntaxError: Unexpected token '...this'
+npm install babel-preset-stage-2
+.babalrc文件中間添加：
+["es2015", { "modules": false }],"stage-2"
+然後npm run build
+啟動：npm run dev
+
+2. Uncaught TypeError: Cannot read property 'extend' of undefined at Object.cR (tianditu_apiv4_new.js:1)
+
+
+3. Uncaught ReferenceError: d3 is not defined
+
+4. require 無法識別
+npm install typescript
+npm install @types/node
+npm run build
+
+5. 頁面不顯示
+去http://www.tianditu.gov.cn/申請賬號，獲取key
+打開 /static/tianditu_apiv4_new.js, 給window.TMAP_AUTHKEY賦值
+npm run dev
+
+6. 天地图的使用和入手
+  map服务接口：http://lbs.tianditu.gov.cn/server/MapService.html
+  
+  
+  
+```
+

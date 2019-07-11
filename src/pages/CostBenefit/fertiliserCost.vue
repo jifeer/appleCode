@@ -3,10 +3,10 @@
     <div class="fertiliserCost-wrapper big-wrapper">
       <!--<div class="bigW-intro"></div>-->
       <div class="bigW-option">
-        <selectTime class="selectTime" @chooseTime="_chooseTime" url="apple/income/getTime?timeType=1"
+        <selectTime class="selectTime" @chooseTime="_chooseTime" url="/static/json/sample/cp/income_time.json?timeType=1"
                     defaultTimeType="年度"></selectTime>
-        <selectArea class="selectArea" @change="_changeArea" url="apple/income/getArea"></selectArea>
-        <selectTree @change="_treeAsync" url="apple/income/getCostSelectData2"></selectTree>
+        <selectArea class="selectArea" @change="_changeArea" url="/static/json/sample/income_area.json"></selectArea>
+        <selectTree @change="_treeAsync" url="/static/json/sample/income_type.json"></selectTree>
         <selectBtn class="selectBtn" :btnIndex.sync="btnIndex" :btnData="btnData" @changeBtn="_changeBtn"></selectBtn>
         <explain :eText="eText"></explain>
       </div>
@@ -47,7 +47,7 @@
           timeData: [],
           option: {
             yAxis: {
-              name: '公斤/亩',
+              name: '万元/个',
             }
           },
         },
@@ -85,12 +85,12 @@
         this.itemId = this.idStr[this.btnIndex]
         if (val == 0) {
           this.type = 101002
-          this.FCchartData.option.yAxis.name = '公斤/亩'
+          this.FCchartData.option.yAxis.name = '万元/个'
           this.item = true;
         }
         else {
           this.type = 101018
-          this.FCchartData.option.yAxis.name = '元/亩'
+          this.FCchartData.option.yAxis.name = '万元/个'
           this.item = false
         }
       },
@@ -119,7 +119,7 @@
       },
       //获取数据
       getFCchartData(){
-        this.$xhr.get('/apple/income/getChemicalFertilizerData', {
+        this.$xhr.get('/static/json/sample/cp/chemical_fertiliser.json', {
           params: {
             ...this.ApiFCchartParms
           }

@@ -138,7 +138,7 @@
 
       // 获取地图名称
       getJSON() {
-        this.$xhr.get(`./static/json/${this.nameMap[this.params.area]}.json`)
+        this.$xhr.get(`.//static/json/${this.nameMap[this.params.area]}.json`)
           .then((res) => {
             // console.log(res)
             /*let newdata = []

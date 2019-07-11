@@ -40,7 +40,7 @@
           tooltip: {
             ...tooltipStyle,
             trigger: 'item',
-            formatter: '{b}</br>{c}万吨</br>{d}%',
+            formatter: '{b}</br>{c}个</br>{d}%',
           },
           title: {
             text: '',
@@ -96,14 +96,14 @@
 
         let newData = [{
           value: this.data.fresh,
-          name: '鲜食消费',
+          name: '成都采购',
         }, {
           value: this.data.processed,
-          name: '加工消费',
+          name: '区市采购',
         }]
         // let newLabel =
         this.option.series[0].data = newData
-        this.option.title.text = `消费结构\n${this.data.year}`
+        this.option.title.text = `采购结构\n${this.data.year}`
         this.chart.setOption(this.option)
       },
       // echats 图表自适应

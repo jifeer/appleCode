@@ -8,7 +8,7 @@
   import {resizeMixin} from 'assets/js/common.js'
   import {axisLabel} from 'assets/js/echarts-style.js';
   export default {
-    name: 'risefall',
+    name: 'risefall-big',
     mixins: [resizeMixin],
     data(){
       return {
@@ -67,35 +67,17 @@
               }
             },
             backgroundColor: '#099d4f',
-            /*formatter: (params, ticket, callback) => {
-             if (this.echartsData.data.length > 0 && this.echartsData.data[params[0].dataIndex].value >= 0) {
-             return `<ul style="list-style: none;text-align: left">
-             <li>${params[0].name}</li>
-             <li>${params[0].data.name}：${params[0].data.typeVal}${params[0].data.name === '种植面积' ? '万亩' : params[0].data.name === '产量' ? '千吨' : '万元/个'}</li>
-             <li>变化率：<span style="color:#fff;font-weight: bold;">${params[0].data.value.toFixed(2)}</span>%↑</li>
-             </ul>`;
-             }
-             else {
-             return `<ul style="list-style: none;text-align: left">
-             <li>${params[0].name}</li>
-             <li>${params[0].data.name}：${params[0].data.typeVal}${params[0].data.name === '种植面积' ? '万亩' : params[0].data.name === '产量' ? '千吨' : '万元/个'}</li>
-             <li>变化率：<span style='color:#fff;font-weight:bold;'>${-params[0].data.value.toFixed(2)}</span>%↓</li>
-             </ul>`;
-             }
-
-             },*/
-
             // 第三版 简化了代码
-            formatter: (params, ticket, callback) => {
-//              console.log(params)
+            formatter: (params) => {
+              console.log(params)
               let str = ''
               params.forEach((val, index) => {
                 if (val.seriesIndex == 0 && (val.data.typeVal || val.data.name)) {
                   if (this.echartsData.data.length > 0 && this.echartsData.data[val.dataIndex].value <= 0) {
                     str = `<ul style="list-style: none;text-align: left;padding: 6px;">
                           <li>${val.name}</li>
-                          <li>${val.data.name}：${val.data.typeVal.toFixed(2)}${val.data.name === '种植面积' ? '万亩' : val.data.name === '产量' ? '个' : '万元/个'}</li>
-                          <li>${val.data.name === '产量' ? '减产' : '减少'}：${val.data.riseorfall || val.data.riseorfall === 0 ? val.data.riseorfall.toFixed(2) : "-"}${val.data.name === '种植面积' ? '万亩' : val.data.name === '产量' ? '个' : '万元/个'}</li>
+                          <li>${val.data.name}：${val.data.typeVal.toFixed(2)}${val.data.name === '采购总量' ? '个' : val.data.name === '采购总额' ? '个' : '万元/个'}</li>
+                          <li>${val.data.name === '采购总额' ? '减产' : '减少'}：${val.data.riseorfall || val.data.riseorfall === 0 ? val.data.riseorfall.toFixed(2) : "-"}${val.data.name === '采购总量' ? '个' : val.data.name === '采购总额' ? '万元' : '万元/个'}</li>
                           <li>变化率：<span style='color:#fff;font-weight:bold;'>${val.data.value ? -val.data.value.toFixed(2) : val.data.value.toFixed(2)}</span>%↓</li>
                         </ul>`;
                   }
@@ -103,55 +85,14 @@
                   if (this.echartsData.data.length > 0 && this.echartsData.data[val.dataIndex].value >= 0) {
                     str = `<ul style="list-style: none;text-align: left;padding: 6px;">
                           <li>${val.name}</li>
-                          <li>${val.data.name}：${val.data.typeVal.toFixed(2)}${val.data.name === '种植面积' ? '万亩' : val.data.name === '产量' ? '个' : '万元/个'}</li>
-                          <li>${val.data.name === '产量' ? '增产' : '增加'}：${val.data.riseorfall || val.data.riseorfall === 0 ? val.data.riseorfall.toFixed(2) : "-"}${val.data.name === '种植面积' ? '万亩' : val.data.name === '产量' ? '个' : '万元/个'}</li>
+                          <li>${val.data.name}：${val.data.typeVal.toFixed(2)}${val.data.name === '采购总量' ? '个' : val.data.name === '采购总额' ? '个' : '万元/个'}</li>
+                          <li>${val.data.name === '采购总额' ? '增产' : '增加'}：${val.data.riseorfall || val.data.riseorfall === 0 ? val.data.riseorfall.toFixed(2) : "-"}${val.data.name === '采购总量' ? '个' : val.data.name === '采购总额' ? '万元' : '万元/个'}</li>
                           <li>变化率：<span style="color:#fff;font-weight: bold;">${val.data.value.toFixed(2)}</span>%↑</li>
                         </ul>`;
                   }
                 }
               })
               return str
-
-
-              /*if(params.length == 1){
-               if(!params[0].seriesIndex && params[0].data.typeVal){
-               if (this.echartsData.data.length > 0 && this.echartsData.data[params[0].dataIndex].value <= 0) {
-               return `<ul style="list-style: none;text-align: left">
-               <li>${params[0].name}</li>
-               <li>${params[0].data.name}：${params[0].data.typeVal}${params[0].data.name === '种植面积' ? '万亩' : params[0].data.name === '产量' ? '个' : '万元/个'}</li>
-               <li>变化率：<span style='color:#fff;font-weight:bold;'>${-params[0].data.value.toFixed(2)}</span>%↓</li>
-               </ul>`;
-               }
-
-               } else if(params[0].seriesIndex && params[0].data.typeVal){
-               if (this.echartsData.data.length > 0 && this.echartsData.data[params[0].dataIndex].value > 0) {
-               return `<ul style="list-style: none;text-align: left">
-               <li>${params[0].name}</li>
-               <li>${params[0].data.name}：${params[0].data.typeVal}${params[0].data.name === '种植面积' ? '万亩' : params[0].data.name === '产量' ? '个' : '万元/个'}</li>
-               <li>变化率：<span style="color:#fff;font-weight: bold;">${params[0].data.value.toFixed(2)}</span>%↑</li>
-               </ul>`;
-               }
-               }
-               } else if(params.length == 2){
-               if(params[0].data.typeVal){
-               if (this.echartsData.data.length > 0 && this.echartsData.data[params[0].dataIndex].value <= 0) {
-               return `<ul style="list-style: none;text-align: left">
-               <li>${params[0].name}</li>
-               <li>${params[0].data.name}：${params[0].data.typeVal}${params[0].data.name === '种植面积' ? '万亩' : params[0].data.name === '产量' ? '个' : '万元/个'}</li>
-               <li>变化率：<span style='color:#fff;font-weight:bold;'>${-params[0].data.value.toFixed(2)}</span>%↓</li>
-               </ul>`;
-               }
-               } else if(params[1].data.typeVal){
-               if (this.echartsData.data.length > 0 && this.echartsData.data[params[1].dataIndex].value > 0) {
-               return `<ul style="list-style: none;text-align: left">
-               <li>${params[1].name}</li>
-               <li>${params[1].data.name}：${params[1].data.typeVal}${params[1].data.name === '种植面积' ? '万亩' : params[1].data.name === '产量' ? '个' : '万元/个'}</li>
-               <li>变化率：<span style="color:#fff;font-weight: bold;">${params[1].data.value.toFixed(2)}</span>%↑</li>
-               </ul>`;
-               }
-               }
-               }*/
-
             }
           },
           color: ['#9c3950', '#03714e'],
@@ -291,6 +232,7 @@
 
       // 初始化图表
       initChart() {
+        console.log("log",this.echartsData)
 
         //如果有新的配置项的变化 深度拷贝
         /*if (Object.keys(this.echartsData.option).length) {
@@ -310,7 +252,7 @@
           this.echartsData.data.forEach((val, index) => {
             if (val.type == '下降') {
               s1.push({
-                name: val.name,             // 类型 产量、单产、种植面积
+                name: val.name,             // 类型 产量、采购预算、采购总量
                 value: Math.abs(val.value), // 变化率， 后台传回来的负值转换为正值
                 typeVal: val.typeVal,       // 类型所对应的值
                 type: val.type,             // 增加or减少

@@ -14,7 +14,7 @@
         <div class="map">
           <!--地图标题-->
           <div class="map-title">
-            <p>{{subTitle.year}}年{{btnIndexCountry ? '武侯区采购' : '成都市采购'}}苹果{{btnIndexRanking ? '总量' : '采购项目数'}}<span style="color: #fff">{{subTitle.value}}</span>{{btnIndexRanking ? '个' : '万元'}}</p>
+            <p>{{subTitle.year}}年{{btnIndexCountry ? '武侯区' : '成都市'}}采购XXX{{btnIndexRanking ? '总量' : '采购项目数'}}<span style="color: #fff">{{subTitle.value}}</span>{{btnIndexRanking ? '个' : '万元'}}</p>
           </div>
           <div class="toggle-map-wrapper map-china" v-if="showChina">
             <!--中国地图visualMap-->
@@ -52,14 +52,23 @@
         <smallWindow class="window1" :isShow="window1" whichWindow="window1" @closeWindow="closeWindow" @openBigWindow="openBigWindow" title="成都市公共预算支出变化趋势">
           <productHisSmall ref="small1"></productHisSmall>
         </smallWindow>
-        <smallWindow class="window2" @closeWindow="closeWindow" :isShow="window2" whichWindow="window2" title="成都各地市采购总量时间分布" @openBigWindow="openBigWindow">
+        <smallWindow class="window2" :isShow="window2" whichWindow="window2"  @closeWindow="closeWindow" @openBigWindow="openBigWindow" title="成都各地市采购总量时间分布">
           <productRisefallSmall></productRisefallSmall>
         </smallWindow>
         <smallWindow class="window3" @closeWindow="closeWindow" :isShow="window3" whichWindow="window3" title="成都各地市采购总额时间分布" @openBigWindow="openBigWindow">
-          <productDisasterSmall></productDisasterSmall>
+          <productWorldTrendSmall></productWorldTrendSmall>
         </smallWindow>
         <smallWindow class="window4" @closeWindow="closeWindow" :isShow="window4" whichWindow="window4" title="成都各地市采购来源分布" @openBigWindow="openBigWindow">
           <productAppleBagSmall></productAppleBagSmall>
+        </smallWindow>
+        <smallWindow class="window5" @closeWindow="closeWindow" :isShow="window5" whichWindow="window5" title="成都采购预算预测" @openBigWindow="openBigWindow">
+          <productYeildSmall ref="small5"></productYeildSmall>
+        </smallWindow>
+        <smallWindow class="window1" @closeWindow="closeWindow" :isShow="window6" whichWindow="window6" title="成都各地市采购总额时间分布2" @openBigWindow="openBigWindow">
+          <productWorldTrendSmall></productWorldTrendSmall>
+        </smallWindow>
+        <smallWindow class="window2" @closeWindow="closeWindow" :isShow="window7" whichWindow="window7" title="全球苹果种植面积增减幅排名" @openBigWindow="openBigWindow">
+          <productWorldRisefallSmall></productWorldRisefallSmall>
         </smallWindow>
       </div>
     </div>
@@ -69,6 +78,7 @@
         <li :class="{'active':active2}" @click="showSmall('window2')"><i class="iconfont icon-shengchan-mianjizengjianfu"></i></li>
         <li :class="{'active':active3}" @click="showSmall('window3')"><i class="iconfont icon-shengchan-zaihaijiance"></i></li>
         <li :class="{'active':active4}" @click="showSmall('window4')"><i class="iconfont icon-shengchan-taodaishuaijiance"></i></li>
+        <li :class="{'active':active5}" @click="showSmall('window5')"><i class="iconfont icon-shengchan-danchanyuce"></i></li>
       </ul>
       <ul v-if="showWorld">
         <li :class="{'active':active6}" @click="showSmall('window6')"><i class="iconfont icon-shengchan-lishiyanbian"></i></li>
@@ -79,7 +89,7 @@
       <productHis ref="big1"></productHis>
     </bigWindow>
     <bigWindow title="" :isShow="bigwindow2" whichWindow="bigwindow2" @closeWindow="closeWindow" @closeBigWindow="closeBigWindow">
-      <productRisefall></productRisefall>
+      <productRisefall ref="big2"></productRisefall>
     </bigWindow>
     <bigWindow title="" :isShow="bigwindow3" whichWindow="bigwindow3" @closeWindow="closeWindow" @closeBigWindow="closeBigWindow">
       <!---->
@@ -88,15 +98,12 @@
     <bigWindow title="" :isShow="bigwindow4" whichWindow="bigwindow4" @closeWindow="closeWindow" @closeBigWindow="closeBigWindow">
       <productAppleBag></productAppleBag>
     </bigWindow>
-    <bigWindow title="单产预测" :isShow="bigwindow5" whichWindow="bigwindow5" @closeWindow="closeWindow" @closeBigWindow="closeBigWindow">
+    <bigWindow title="成都采购预算预测" :isShow="bigwindow5" whichWindow="bigwindow5" @closeWindow="closeWindow" @closeBigWindow="closeBigWindow">
       <productYeild></productYeild>
     </bigWindow>
     <bigWindow title="苹果生产及占水果比重走势" :isShow="bigwindow6" whichWindow="bigwindow6" @closeWindow="closeWindow" @closeBigWindow="closeBigWindow">
       <productWorldTrend></productWorldTrend>
     </bigWindow>
-    <!--<bigWindow title="全球苹果占水果比重走势" :isShow="bigwindow6"  whichWindow="bigwindow6" @closeWindow="closeWindow" @closeBigWindow="closeBigWindow">
-      <productWorldArea></productWorldArea>
-    </bigWindow>-->
     <bigWindow title="" :isShow="bigwindow7" whichWindow="bigwindow7" @closeWindow="closeWindow" @closeBigWindow="closeBigWindow">
       <productWorldRisefall></productWorldRisefall>
     </bigWindow>
@@ -105,7 +112,7 @@
       <productMapTrend :popAreaInfo="popAreaInfo"></productMapTrend>
     </bigWindow>
     <!--气象灾害地图弹出层-->
-    <bigWindow title="单产预测" :isShow="bigwindow9" whichWindow="bigwindow9" @closeWindow="closeWindow" @closeBigWindow="closeBigWindow">
+    <bigWindow title="成都采购预算预测" :isShow="bigwindow9" whichWindow="bigwindow9" @closeWindow="closeWindow" @closeBigWindow="closeBigWindow">
       <productYeildSingle :paramsdata="paramsdata"></productYeildSingle>
     </bigWindow>
   </div>
@@ -162,7 +169,7 @@
         btnDataRanking: ['采购总量', '采购总额'],
         btnIndexRanking: 0,
         btnIndexRankingCache: 0,
-        // 种植面积和产量对应的查询参数
+        // 种植面积和采购总额对应的查询参数
         btnType: ['121689', '112716'],
         // 文字说明
         textInfo: [`数据起始于2000年，级别为地市区县。`, `数据来源于FAO，起始于1990年，级别为全球、各国。`],
@@ -215,28 +222,28 @@
         paramsC: {
           // 时间 2002
           time: '2007',
-          // 数据类型 种植面积/产量/单产  default:121689
+          // 数据类型 采购总量/采购总额/采购预算  default:121689
           type: '121689'
         },
         // 中国排名参数
         paramsCR: {
           // 时间 2002
           time: '2007',
-          // 数据类型 种植面积/产量/单产  default:121689
+          // 数据类型 采购总量/采购总额/采购预算  default:121689
           type: '121689'
         },
         // 全球地图参数
         paramsW: {
           // 时间 2002
           time: '2013',
-          // 数据类型 种植面积/产量/单产  default: 121689 || 112716
+          // 数据类型 采购总量/采购总额/采购预算  default: 121689 || 112716
           type: '121689'
         },
         // 全球排名参数
         paramsWR: {
           // 时间 2002
           time: '2013',
-          // 数据类型 种植面积/产量/单产  default: 121689 || 112716
+          // 数据类型 采购总量/采购总额/采购预算  default: 121689 || 112716
           type: '121689'
         },
         // 气象灾害弹出层传递参数
@@ -499,7 +506,7 @@
         }
       },
 
-      // 排名图表的 种植面积和产量切换
+      // 排名图表的 种植面积和采购总额切换
       changeBtnRanking(val) {
         if (this.btnIndexCountry == 0) {
           // 在中国的时候只有一条时间轴，不是用cache
@@ -529,7 +536,7 @@
               height: '35px',
               id: 'chinascorll',
               needDefault: true,
-              // 种植面积
+              // 采购总量
               url: 'apple/production/AllMapTime?type=121689'
             }
           } else if (val === '采购总额') {
@@ -541,7 +548,7 @@
               id: 'chinascorll',
               needDefault: true,
               pos: '2014',
-              // 种植面积
+              // 采购总量
               url: 'apple/production/AllMapTime?type=112716'
             }
           }

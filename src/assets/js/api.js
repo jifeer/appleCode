@@ -32,12 +32,14 @@ xhr.interceptors.request.use(function (config) {
   // 如果请求是 post 的请求 用qs 配置下 请求参数
   if (config.method === 'post') {
     config.data = qs.stringify(config.data)
+    console.log('POST baseURL=',baseURL)
     return config
   }
 
   // 采用完全自定义的方式书写 get 的请求时，将 post请求中放在 data 里面的数据，放到 params当中
   if (config.method === 'get' && config.data && Object.keys(config.data).length) {
     config.params = qs.parse(config.data)
+    console.log('GET baseURL=',baseURL)
     return config
   }
 

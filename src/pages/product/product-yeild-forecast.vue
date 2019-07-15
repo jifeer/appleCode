@@ -1,10 +1,10 @@
 <template>
   <div class="product-yeild-wrapper big-wrapper">
     <div class="bigW-intro">
-      根据<span>{{params.area}}</span>苹果主产区气象条件<span v-html="titleInfo.bagFlag ? '及套袋量' : ''"></span>，<span>{{titleInfo.desYear}}</span>年单产预测为<span>{{titleInfo.value}}</span>万元/个，同比{{titleInfo.desResult}}<span
+      根据<span>{{params.area}}</span>当年预算结算<span v-html="titleInfo.bagFlag ? '及采购需求' : ''"></span>，<span>{{titleInfo.desYear}}</span>年采购预算预测为<span>{{titleInfo.value}}</span>万元，同比{{titleInfo.desResult}}<span
       class="title-num">{{titleInfo.desPercent}}</span>。</div>
     <div class="bigW-option">
-      <selectTime @chooseTime="_chooseTime" url="apple/production/getDcycTime" defaultTimeType="年度"
+      <selectTime @chooseTime="_chooseTime" url="static/json/sample/prd/yield_fc_time.json" defaultTimeType="年度"
                   :timeTypeData="timeTypeData" :areaId="areaId"></selectTime>
       <p>
         <selectTreeAsync @change="_treeArea" url="apple/production/dq"></selectTreeAsync>
@@ -27,7 +27,7 @@
     name: 'line',
     data() {
       return {
-        eText: `使用岭回归、LASSO回归法，依据2000年以来主产县的历史单产、气象条件及部分地区套袋量数据预测单产数据。数据级别为全国、省级、县级，来源为农业农村部。`,
+        eText: `使用岭回归、LASSO回归法，依据今年XXX预算结算及采购需求预测来年采购金额。数据级别为全国、省级、县级，来源为政府采购网。`,
         timeTypeData: [],
         areaId: '370000',
         echartsData: {

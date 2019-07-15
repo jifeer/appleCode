@@ -336,7 +336,7 @@
                         <td>${props.AREANAME}</td>
                       </tr>
                       <tr>
-                       <td>${props.type == '121689' ? '种植面积：' + (props.PLANT_AREA ? props.PLANT_AREA.toFixed(2) : '-') + '万亩' : props.type == '112716' ? '产量：' + (props.PLANT_AREA ? props.PLANT_AREA.toFixed(2) : '-') + '个' : '-'}<td/>
+                       <td>${props.type == '121689' ? '采购总量：' + (props.PLANT_AREA ? props.PLANT_AREA.toFixed(2) : '-') + '万亩' : props.type == '112716' ? '产量：' + (props.PLANT_AREA ? props.PLANT_AREA.toFixed(2) : '-') + '个' : '-'}<td/>
                       </tr>
                       <tr>
                        <td>排名：${props.AREARANKING}</td>
@@ -410,7 +410,7 @@
                         <td>${props.AREANAME}</td>
                       </tr>
                       <tr>
-                       <td>${props.type == '121689' ? '种植面积：' + (props.PLANT_AREA ? props.PLANT_AREA.toFixed(2) : '-') + '万亩' : props.type == '112716' ? '产量：' + (props.PLANT_AREA ? props.PLANT_AREA.toFixed(2) : '-') + '个' : '-'}<td/>
+                       <td>${props.type == '121689' ? '采购总量：' + (props.PLANT_AREA ? props.PLANT_AREA.toFixed(2) : '-') + '万亩' : props.type == '112716' ? '产量：' + (props.PLANT_AREA ? props.PLANT_AREA.toFixed(2) : '-') + '个' : '-'}<td/>
                       </tr>
                       <tr>
                        <td>排名：${props.AREARANKING}</td>
@@ -420,7 +420,7 @@
         /*var table = `<table id='gis_data_table' style="text-align: center; width: 200px;padding: 6px">
          <tr style="font-size: 16px; font-weight: bold;height: 30px">
          <td>区域</td>
-         <td>${props.type == '121689' ? '种植面积' : props.type == '112716' ? '产量' : '-'}</td>
+         <td>${props.type == '121689' ? '采购总量' : props.type == '112716' ? '产量' : '-'}</td>
          <td>排名</td>
          </tr>
          <tr style="font-size: 16px; font-weight: bold; color: #07c95c; height: 30px">

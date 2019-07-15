@@ -259,7 +259,7 @@
       //左一图
       renderMap() {
 
-        this.$xhr.get("/static/json/sample/china_yield_data.json")
+        this.$xhr.get("static/json/sample/china_yield_data.json")
           .then((res) => {
 //           	console.log(res)
             this.aYieldData.data = res.data.data
@@ -271,7 +271,7 @@
       },
       //左二图
       renderYeild() {
-        this.$xhr.get("/static/json/sample/yield_forecast.json", {
+        this.$xhr.get("static/json/sample/yield_forecast.json", {
                   // this.$xhr.get("apple/production/yield_forecast.json", {
           params: {
             AREA_NAME: "全国",
@@ -294,7 +294,7 @@
       },
       //左三图
       renderCBchart() {
-        this.$xhr.get("/static/json/sample/index_trend_change.json")
+        this.$xhr.get("static/json/sample/index_trend_change.json")
           .then((res) => {
             this.cbchartData.data = res.data.data
             this.cbchartData.timeData = res.data.time
@@ -307,7 +307,7 @@
       //中下左图
       firstLoad() {
 
-        this.$xhr.get("/static/json/sample/every_price_data.json", {
+        this.$xhr.get("static/json/sample/every_price_data.json", {
           params: {
             timeType: 'month',
             areaId: '000000',
@@ -325,7 +325,7 @@
       },
       //中下右图
       getFlowdata() {
-        this.$xhr.get('/static/json/sample/index_detect.json')
+        this.$xhr.get('static/json/sample/index_detect.json')
           .then((res) => {
             let dataArr = [];
 //						console.log(res)
@@ -346,7 +346,7 @@
 //
       //右一图
       getTopBarData() {
-        this.$xhr.get("/static/json/sample/p_sale_status.json")
+        this.$xhr.get("static/json/sample/p_sale_status.json")
           .then((res) => {
             this.tradeTopBarData.allExpense = res.data.allExpense
             this.tradeTopBarData.expenseChangeRate = res.data.expenseChangeRate
@@ -369,7 +369,7 @@
       getfWchartData() {
 
        // this.$xhr.get("apple/consume/feature/getFruitDiameterPreference?TIME_ID=201701,201702,201703,201704,201705,201706,201707,201708,201709,201710,201711,201712&AREA_NAME=%E5%85%A8%E5%9B%BD&TIME_TYPE=month")
-        this.$xhr.get("/static/json/sample/fruit_diameter_preference.json")
+        this.$xhr.get("static/json/sample/fruit_diameter_preference.json")
           .then((res) => {
 //          	console.log(res)
             this.fWchartData.data = res.data
@@ -382,7 +382,7 @@
       },
       //右三图
       renderExport() {
-        this.$xhr.get("/static/json/sample/export_info.json")
+        this.$xhr.get("static/json/sample/export_info.json")
           .then((res) => {
 //        	console.log(res)
             this.exportDate.xdata = res.data.time

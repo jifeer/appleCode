@@ -6,7 +6,7 @@
         "seriesData": "6.55",
         "min": "2",
         "max": "9.06",
-        "name": "月均价",
+        "name": "十年均价",
         "section1": "2.15",
         "section2": "6.24"
       },
@@ -15,7 +15,7 @@
         "seriesData": "6.54",
         "min": "2",
         "max": "9.23",
-        "name": "日均价",
+        "name": "五年均价",
         "section1": "2.16",
         "section2": "6.39"
       },

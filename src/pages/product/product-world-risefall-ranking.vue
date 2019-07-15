@@ -28,7 +28,7 @@
     name: 'line',
     data() {
       return {
-        btnData: ['种植面积', '产量', '单产'],
+        btnData: ['采购总量', '产量', '单产'],
         btnIndex: 0,
         eText: '数据来源于FAO，起始于1990年，级别为全球、各国。',
         echartsData: {
@@ -37,11 +37,11 @@
         },
         width: '100%',
         height: '100%',
-        titleType: '种植面积',
+        titleType: '采购总量',
         params: {
           // 时间 2002,2003,2004,2005,2005,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016
           time: '',
-          // 数据类型 种植面积/产量/单产  default:112716
+          // 数据类型 采购总量/产量/单产  default:112716
           type: ''
         },
         // 时间轴配置选项
@@ -79,9 +79,9 @@
 
       // 改变数据 类型
       _changeBtn(name){
-        if(name === '种植面积'){
+        if(name === '采购总量'){
           this.params.type = '121689'
-          this.titleType = '种植面积'
+          this.titleType = '采购总量'
         } else if(name === '产量'){
           this.params.type = '112716'
           this.titleType = '产量'

@@ -92,9 +92,9 @@
             itemWidth: 14,
             itemGap: 18,
             data: [{
-              name: '预测单产',
+              name: '预测采购预算',
             }, {
-              name: '实际单产',
+              name: '实际采购预算',
             }],
             textStyle: {
               color: "#fff",
@@ -125,7 +125,7 @@
           }],
           yAxis: [{
             type: 'value',
-            name: '单产（万元/个）',
+            name: '采购预算（万元/年）',
             nameTextStyle: {
               fontSize: 18,
               color: '#fff',
@@ -153,7 +153,7 @@
             }
           }],
           series: [{
-            name: '预测单产',
+            name: '预测采购预算',
             type: 'line',
             smooth: true,
             symbolSize: 16,
@@ -176,7 +176,7 @@
             },
             data: [],
           }, {
-            name: '实际单产',
+            name: '实际采购预算',
             type: 'line',
             smooth: true,
             symbolSize: 16,

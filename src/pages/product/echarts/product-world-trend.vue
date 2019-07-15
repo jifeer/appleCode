@@ -132,7 +132,7 @@
           }],
           yAxis: [{
             type: 'value',
-            name: '种植面积（万亩）',
+            name: '采购总量（万亩）',
             nameTextStyle: {
               color: '#fff'
             },

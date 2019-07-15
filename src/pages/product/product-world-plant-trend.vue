@@ -51,7 +51,7 @@
     name: 'line',
     data() {
       return {
-        btnData: ['种植面积', '产量', '单产'],
+        btnData: ['采购总量', '产量', '单产'],
         btnIndex: 1,
         eTextUp: '数据来源于FAO，起始于1990年，级别为全球、各国。',
         echartsDataUp: {
@@ -79,7 +79,7 @@
           time: '',
           // 地区 全球，中国
           area: '',
-          // 数据类型 种植面积/产量/单产  default:112716
+          // 数据类型 采购总量/产量/单产  default:112716
           type: ''
         },
 
@@ -138,12 +138,12 @@
     methods: {
       // 改变数据 类型
       _changeBtn(name){
-        if (name === '种植面积') {
+        if (name === '采购总量') {
           this.params.type = '121689'
           // 如果需要联动，注释掉上面一行，打开下面一行
 //          this.getAreaType = '121689'
           this.axisData.yAxisNameL = '面积（万亩）'
-          this.axisData.type = '种植面积'
+          this.axisData.type = '采购总量'
         } else if (name === '产量') {
           this.params.type = '112716'
           // 如果需要联动，注释掉上面一行，打开下面一行

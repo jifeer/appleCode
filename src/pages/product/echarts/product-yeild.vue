@@ -68,7 +68,7 @@
               formatter: function (params) {
                 let text = '<div style="padding: 6px"><p style="width: 100%; text-align: left">' + params[0].axisValue + '</p>';
                 params.forEach(function (val, index) {
-                  text += '<p style="text-align: left">' + val.seriesName + '： ' + val.value + '万元/个' + '</p>'
+                  text += '<p style="text-align: left">' + val.seriesName + '： ' + val.value + '万元/年' + '</p>'
                 })
                 text += `</div>`
                 return text;
@@ -92,9 +92,9 @@
               itemWidth: 14,
               itemGap: 18,
               data: [{
-                name: '预测单产',
+                name: '预测采购预算',
               }, {
-                name: '实际单产',
+                name: '实际采购预算',
               }],
               textStyle: {
                 color: "#fff",
@@ -130,7 +130,7 @@
             }],
             yAxis: [{
               type: 'value',
-              name: '单产（万元/个）',
+              name: '采购预算（万元/年）',
               nameTextStyle: {
                 color: '#fff'
               },
@@ -160,7 +160,7 @@
               }
             }],
             series: [{
-              name: '预测单产',
+              name: '预测采购预算',
               type: 'line',
               smooth: true,
               symbolSize: 2,
@@ -183,7 +183,7 @@
               },
               data: this.echartsData.data1,
             }, {
-              name: '实际单产',
+              name: '实际采购预算',
               type: 'line',
               smooth: true,
               symbolSize: 2,

@@ -50,7 +50,7 @@
 
     data() {
       return {
-        btnData:['种植面积', '产量', '单产'],
+        btnData:['采购总量', '产量', '单产'],
         btnIndex: 0,
         eTextUp:'数据起始于1982年，级别为县级，来源于农业农村部。',
         timeTypeData: [],
@@ -74,7 +74,7 @@
           time: '',
           // 地区 全国，北京，山东
           area: '',
-          // 数据类型 种植面积/产量/单产  default:112716
+          // 数据类型 采购总量/产量/单产  default:112716
           type: ''
         },
         width: '100%',
@@ -120,10 +120,10 @@
     methods:{
       // 改变数据 类型
       _changeBtn(name){
-        if(name === '种植面积'){
+        if(name === '采购总量'){
           this.params.type = '121689'
           this.axisData.yAxisNameL = '面积（万亩）'
-          this.axisData.type = '种植面积'
+          this.axisData.type = '采购总量'
         } else if(name === '产量'){
           this.params.type = '112716'
           this.axisData.yAxisNameL = '产量（个）'

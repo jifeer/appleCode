@@ -1,0 +1,81 @@
+{
+  "status": 200,
+  "data": {
+    "data": [
+      {
+        "typeVal": 234.81,
+        "riseorfall": 23.19,
+        "name": "采购总量",
+        "type": "下降",
+        "value": -8.99
+      },
+      {
+        "typeVal": 57.68,
+        "riseorfall": 4.57,
+        "name": "采购总量",
+        "type": "下降",
+        "value": -7.35
+      },
+      {
+        "typeVal": 225.47,
+        "riseorfall": 12.43,
+        "name": "采购总量",
+        "type": "下降",
+        "value": -5.23
+      },
+      {
+        "typeVal": 233.06,
+        "riseorfall": 3.95,
+        "name": "采购总量",
+        "type": "下降",
+        "value": -1.66
+      },
+      {
+        "typeVal": 451.89,
+        "riseorfall": 5.01,
+        "name": "采购总量",
+        "type": "下降",
+        "value": -1.1
+      },
+      {
+        "typeVal": 362.66,
+        "riseorfall": 1.31,
+        "name": "采购总量",
+        "type": "增加",
+        "value": 0.36
+      },
+      {
+        "typeVal": 1057.13,
+        "riseorfall": 34.43,
+        "name": "采购总量",
+        "type": "增加",
+        "value": 3.37
+      },
+      {
+        "typeVal": 76.22,
+        "riseorfall": 8.12,
+        "name": "采购总量",
+        "type": "增加",
+        "value": 11.92
+      },
+      {
+        "typeVal": 103.14,
+        "riseorfall": 15.69,
+        "name": "采购总量",
+        "type": "增加",
+        "value": 17.94
+      }
+    ],
+    "xdata": [
+      "锦江",
+      "武侯",
+      "青羊",
+      "郫县",
+      "温江",
+      "高新",
+      "龙泉驿",
+      "成华",
+      "都江堰"
+    ]
+  }
+}

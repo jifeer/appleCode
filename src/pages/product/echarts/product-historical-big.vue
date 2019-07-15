@@ -108,10 +108,10 @@
                 else{
                 	 unite = "%"
                 }
-//              const unite = (val.seriesName.indexOf('种植面积')  > -1 || val.seriesName.indexOf('产量'))  > -1 && val.seriesType === 'bar' ? '万亩' : val.seriesName.indexOf('单产') > -1 && val.seriesType === 'bar' ? '万元/个' : '%'
+//              const unite = (val.seriesName.indexOf('采购总量')  > -1 || val.seriesName.indexOf('产量'))  > -1 && val.seriesType === 'bar' ? '万亩' : val.seriesName.indexOf('单产') > -1 && val.seriesType === 'bar' ? '万元/个' : '%'
                 str += `<p style="text-align: left">${val.seriesName}：${val.value || val.value === 0 ? val.value.toFixed(2) : "-"}${unite}`
 //                 if (index % 2 == 0) {
-//                   str += `<p style="text-align: left">${val.seriesName}：${val.value || val.value === 0 ? val.value.toFixed(2) : "-"}${val.seriesName.indexOf("种植面积") >= 0 ? '万亩' : val.seriesName.indexOf("单产") >= 0 ? '万元/个' : '个'}</p>`
+//                   str += `<p style="text-align: left">${val.seriesName}：${val.value || val.value === 0 ? val.value.toFixed(2) : "-"}${val.seriesName.indexOf("采购总量") >= 0 ? '万亩' : val.seriesName.indexOf("单产") >= 0 ? '万元/个' : '个'}</p>`
 //                 } else {
 //                   str += `<p style="text-align: left">${val.seriesName}：${val.value || val.value === 0 ? val.value.toFixed(2) : "-"}%</p>`
 //                 }

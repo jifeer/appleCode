@@ -1,6 +1,6 @@
 <template>
   <div class="product-risefall-wrapper big-wrapper">
-    <div class="true-title"><p>{{params.time}}年全国苹果{{titleType}}增减幅排名</p></div>
+    <div class="true-title"><p>{{params.time}}年成都政府采购{{titleType}}增减幅排名</p></div>
     <!--<div class="bigW-intro"></div>-->
     <div class="bigW-option">
       <p>
@@ -29,21 +29,21 @@
     name: 'line',
     data() {
       return {
-        btnData:['种植面积', '产量', '单产'],
+        btnData:['采购总量', '采购总额', '采购预算'],
         btnIndex: 0,
         eText:'数据起始于1982年，级别为全国、省级，来源于农业农村部。',
         echartsData:{
           xdata: [],
           data: [],
         },
-        titleType: '种植面积',
+        titleType: '采购总量',
         width: '100%',
         height: '100%',
         params: {
           // 时间段 2002,2003,2004,2005,2005,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016
-          time: '',
-          // 数据类型 种植面积/产量/单产  default:112716
-          type: ''
+          time: '2016',
+          // 数据类型 采购总量112716/采购总额112717/采购预算112718  default:112716
+          type: '112716'
         },
         // 时间轴配置选项
         scorllOption: {
@@ -70,6 +70,7 @@
 
     watch: {
       apiParams(newVal) {
+        console.log(newVal.TIME_ID,newVal.type)
         if(newVal.TIME_ID && newVal.type){
           this.getChartData()
         }
@@ -79,15 +80,15 @@
     methods:{
       // 改变数据 类型
       _changeBtn(name){
-        if(name === '种植面积'){
+        if(name === '采购总量'){
           this.params.type = '121689'
-          this.titleType = '种植面积'
-        } else if(name === '产量'){
+          this.titleType = '采购总量'
+        } else if(name === '采购总额'){
           this.params.type = '112716'
-          this.titleType = '产量'
-        } else if(name === '单产'){
-          this.params.type = '单产'
-          this.titleType = '单产'
+          this.titleType = '采购总额'
+        } else if(name === '采购预算'){
+          this.params.type = '采购预算'
+          this.titleType = '采购预算'
         }
       },
 
@@ -99,7 +100,7 @@
 
       getChartData() {
         // 发送ajax请求数据
-        this.$xhr.get(`apple/production/pAs`, {
+        this.$xhr.get(`static/json/sample/prd/rise_pas.json`, {
           params: {
             ...this.apiParams
           }

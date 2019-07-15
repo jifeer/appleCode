@@ -11,8 +11,8 @@
       <div class="point" @click.stop="_toggleShowTip"></div>
       <div class="message" :class="{show: toggleshow }">
         <p>
-          <!--年均价：参照最近20年苹果年均价，红色区域为最小值至10分位数，绿色区域为10分位数至最大值，橘色区域为最大值至最大值*110%；月均价：参照当前季度最近20年苹果月均价，红色区域为最近一年的成本价至10分位数，绿色区域和橘色区域同年均价；日均价：参照当前月度最近20年苹果日均价，红色区域、绿色区域和橘色区域同年均价。-->
-      日均价、月均价、年均价：参照最近20年苹果日、月、年均价，橘色区域为苹果成本价至10分位数，绿色区域为10分位数至最大值，黄色区域为最大值至最大值*110%。
+          <!--年均价：参照最近20年苹果年均价，红色区域为最小值至10分位数，绿色区域为10分位数至最大值，橘色区域为最大值至最大值*110%；十年均价：参照当前季度最近20年苹果十年均价，红色区域为最近一年的成本价至10分位数，绿色区域和橘色区域同年均价；五年均价：参照当前月度最近20年苹果五年均价，红色区域、绿色区域和橘色区域同年均价。-->
+      五年均价、十年均价、年均价：参照最近20年苹果日、月、年均价，橘色区域为苹果成本价至10分位数，绿色区域为10分位数至最大值，黄色区域为最大值至最大值*110%。
         </p>
       </div>
     </div>
@@ -59,7 +59,7 @@
             var waterChart = libMain.CreateWaterChart;
             var createChart = new waterChart();
             this.kill1 = createChart.init({
-              name: '月均价',
+              name: '十年均价',
               width: 134,
               height: 134,
               dom: 'frontChart',
@@ -82,7 +82,7 @@
             var waterChart = libMain.CreateWaterChart;
             var createChart = new waterChart();
             this.kill2 = createChart.init({
-              name: '日均价',
+              name: '五年均价',
               width: 150,
               height: 150,
               dom: 'middleChart',

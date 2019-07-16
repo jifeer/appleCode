@@ -13,6 +13,7 @@
     "@types/node": "^12.6.2",
     "axios": "^0.16.2",
     "babel-polyfill": "^6.26.0",
+    "compression-webpack-plugin": "^3.0.0",
     "deepcopy": "^0.6.3",
     "echarts": "^3.7.1",
     "element-ui": "^1.4.6",

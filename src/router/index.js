@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import index from 'pages/index/index'
 import product from 'pages/product/product'
 import CostBenefit from 'pages/CostBenefit/CostBenefit'
 import expence from 'pages/expence/expence'
@@ -18,7 +17,7 @@ export default new Router({
   }, {
     path: '/index',
     name: 'index',
-    component: index
+    component: resolve => require(['pages/index/index.vue'],resolve)
   }, {
     path: '/product',
     name: 'product',

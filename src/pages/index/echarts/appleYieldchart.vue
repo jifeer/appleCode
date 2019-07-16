@@ -52,8 +52,8 @@
               formatter: (params) => {
 //                      	console.log(params)
                 if (params.value >= 0) {
-                  return "<div style='text-align:left'>" + `苹果产量<br>
-		                	        ${params.name}：${params.value}个` + "</div>"
+                  return "<div style='text-align:left'>" + `采购总额<br>
+		                	        ${params.name}：${params.value}万元` + "</div>"
                 } else {
                   return ''
                 }
@@ -70,7 +70,7 @@
             series: [
               {
                 data: [],
-                name: '苹果产量',
+                name: '采购总额',
                 type: 'map',
                 mapType: 'china',
                 // roam: true,
